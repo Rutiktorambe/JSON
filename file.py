@@ -116,6 +116,5 @@ def process_csv_to_json(mapping_file, csv_file, output_file):
         json.dump(result, f, indent=4)
     print(f"✅ Output saved to {output_file}")
 
-# Run this like:
-# process_csv_to_json("working mapping.xlsm", "rrf.csv", "output.json")
+
 process_csv_to_json("working mapping.xlsx", "rrf.csv", "output.json")
