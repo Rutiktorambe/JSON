@@ -8,22 +8,22 @@ def read_mapping(mapping_path):
     mappings = []
     for _, row in df.iterrows():
         mappings.append({
-            'type': str(row['Type']).strip().lower(),
+            'type': str(row.get('Type', '')).strip().lower(),
             'var': str(row['Variable']).strip(),
             'prefix': str(row['prefix']).strip(),
             'path': str(row['Path']).strip(),
-            'datatype': str(row['DataType']).strip().lower()
+            'datatype': str(row['DataType']).strip().lower(),
+            'samed': str(row.get('samed', '')).strip()
         })
     return mappings
 
 def get_default_value(dtype):
-    if dtype == "string" or dtype == "date":
-        return ""
-    elif dtype == "number":
-        return 0
-    elif dtype == "boolean":
-        return False
-    return None
+    return {
+        "string": "",
+        "date": "",
+        "number": 0,
+        "boolean": False
+    }.get(dtype, None)
 
 def convert_value(val, dtype):
     if pd.isna(val):
@@ -53,53 +53,60 @@ def insert_path_direct(d, path, value_dict):
 
 def process_row(row, mappings, all_headers):
     final = {}
-    list_struct = defaultdict(lambda: defaultdict(dict))  # path -> index -> {prefix+var: value}
+    list_struct = defaultdict(lambda: defaultdict(dict))
 
-    # lowercase headers for case-insensitive lookup
+    # Lowercase headers for lookup
     header_map = {col.lower(): col for col in all_headers}
     row_dict = {col.lower(): val for col, val in row.items()}
 
     list_field_max_index = defaultdict(int)
 
     for m in mappings:
-        mtype, var, prefix, path, dtype = m.values()
+        mtype, var, prefix, path, dtype, samed = m.values()
         var_lc = var.lower()
         prefix_lc = prefix.lower()
+        samed_lc = samed.lower() if samed else ""
 
         if mtype == "list":
-            # match headers like pl_input1_b
-            pattern = re.compile(rf"{prefix_lc}(\d+)[_]?{var_lc}$")
-            matched_any = False
+            # e.g., pl_input1_b or fallback plinputB_alt1
+            pattern_primary = re.compile(rf"{prefix_lc}(\d+)[_]?{var_lc}$")
+            pattern_fallback = re.compile(rf"{samed_lc}(\d+)$") if samed_lc else None
+            matched = False
+
             for col_lc in header_map:
-                match = pattern.fullmatch(col_lc)
+                match = pattern_primary.fullmatch(col_lc)
+                if not match and pattern_fallback:
+                    match = pattern_fallback.fullmatch(col_lc)
+
                 if match:
-                    matched_any = True
                     idx = int(match.group(1)) - 1
-                    field_name = f"{prefix}{var}"  # preserve original case in key
+                    field_name = f"{prefix}{var}"
                     value = convert_value(row_dict.get(col_lc, None), dtype)
                     list_struct[path][idx][field_name] = value
                     list_field_max_index[path] = max(list_field_max_index[path], idx + 1)
+                    matched = True
 
-            if not matched_any:
-                # if no matching columns at all, still initialize one item
+            if not matched:
                 list_struct[path][0][f"{prefix}{var}"] = get_default_value(dtype)
                 list_field_max_index[path] = max(list_field_max_index[path], 1)
 
         else:
-            # non-list field: match directly using lowercase
+            # Non-list fields
+            value = None
             if var_lc in row_dict:
                 value = convert_value(row_dict[var_lc], dtype)
+            elif samed_lc and samed_lc in row_dict:
+                value = convert_value(row_dict[samed_lc], dtype)
             else:
                 value = get_default_value(dtype)
             insert_path_nested(final, path, var, value)
 
-    # finalize list insertion
+    # Finalize list items
     for path, max_index in list_field_max_index.items():
-        full_items = []
+        items = []
         for i in range(max_index):
-            entry = list_struct[path].get(i, {})
-            full_items.append(entry)
-        insert_path_direct(final, path, full_items)
+            items.append(list_struct[path].get(i, {}))
+        insert_path_direct(final, path, items)
 
     return final
 
@@ -115,6 +122,7 @@ def process_csv_to_json(mapping_file, csv_file, output_file):
     with open(output_file, 'w') as f:
         json.dump(result, f, indent=4)
     print(f"✅ Output saved to {output_file}")
+
 
 
 process_csv_to_json("working mapping.xlsx", "rrf.csv", "output.json")
