@@ -20,17 +20,17 @@
                     {
                         "Pl_inputb": 12.0,
                         "Pl_inputc": true,
-                        "Pl_inputd": "24-07-2025"
+                        "Pl_inputd": ""
                     },
                     {
-                        "Pl_inputb": "hiitest1",
+                        "Pl_inputb": 0,
                         "Pl_inputc": false,
-                        "Pl_inputd": "hiitest1"
+                        "Pl_inputd": ""
                     },
                     {
-                        "Pl_inputb": "hiitest1",
+                        "Pl_inputb": 0,
                         "Pl_inputc": false,
-                        "Pl_inputd": "hiitest1"
+                        "Pl_inputd": ""
                     }
                 ],
                 "t": {
@@ -74,12 +74,12 @@
                         "Pl_inputd": "25-07-2025"
                     },
                     {
-                        "Pl_inputb": "hiitest2",
+                        "Pl_inputb": 0,
                         "Pl_inputc": false,
                         "Pl_inputd": "hiitest2"
                     },
                     {
-                        "Pl_inputb": "hiitest2",
+                        "Pl_inputb": 0,
                         "Pl_inputc": false,
                         "Pl_inputd": "hiitest2"
                     }
@@ -125,12 +125,12 @@
                         "Pl_inputd": "26-07-2025"
                     },
                     {
-                        "Pl_inputb": "hiitest3",
+                        "Pl_inputb": 0,
                         "Pl_inputc": false,
                         "Pl_inputd": "hiitest3"
                     },
                     {
-                        "Pl_inputb": "hiitest3",
+                        "Pl_inputb": 0,
                         "Pl_inputc": false,
                         "Pl_inputd": "hiitest3"
                     }
@@ -176,12 +176,12 @@
                         "Pl_inputd": "27-07-2025"
                     },
                     {
-                        "Pl_inputb": "hiitest4",
+                        "Pl_inputb": 0,
                         "Pl_inputc": false,
                         "Pl_inputd": "hiitest4"
                     },
                     {
-                        "Pl_inputb": "hiitest4",
+                        "Pl_inputb": 0,
                         "Pl_inputc": false,
                         "Pl_inputd": "hiitest4"
                     }
@@ -227,12 +227,12 @@
                         "Pl_inputd": "28-07-2025"
                     },
                     {
-                        "Pl_inputb": "hiitest5",
+                        "Pl_inputb": 0,
                         "Pl_inputc": false,
                         "Pl_inputd": "hiitest5"
                     },
                     {
-                        "Pl_inputb": "hiitest5",
+                        "Pl_inputb": 0,
                         "Pl_inputc": false,
                         "Pl_inputd": "hiitest5"
                     }
@@ -278,12 +278,12 @@
                         "Pl_inputd": "29-07-2025"
                     },
                     {
-                        "Pl_inputb": "hiitest6",
+                        "Pl_inputb": 0,
                         "Pl_inputc": false,
-                        "Pl_inputd": "hiitest6"
+                        "Pl_inputd": ""
                     },
                     {
-                        "Pl_inputb": "hiitest6",
+                        "Pl_inputb": 0,
                         "Pl_inputc": false,
                         "Pl_inputd": "hiitest6"
                     }
@@ -329,12 +329,12 @@
                         "Pl_inputd": "30-07-2025"
                     },
                     {
-                        "Pl_inputb": "hiitest7",
+                        "Pl_inputb": 0,
                         "Pl_inputc": false,
                         "Pl_inputd": "hiitest7"
                     },
                     {
-                        "Pl_inputb": "hiitest7",
+                        "Pl_inputb": 0,
                         "Pl_inputc": false,
                         "Pl_inputd": "hiitest7"
                     }
@@ -380,12 +380,12 @@
                         "Pl_inputd": "31-07-2025"
                     },
                     {
-                        "Pl_inputb": "hiitest8",
+                        "Pl_inputb": 0,
                         "Pl_inputc": false,
                         "Pl_inputd": "hiitest8"
                     },
                     {
-                        "Pl_inputb": "hiitest8",
+                        "Pl_inputb": 0,
                         "Pl_inputc": false,
                         "Pl_inputd": "hiitest8"
                     }
@@ -431,12 +431,12 @@
                         "Pl_inputd": "01-08-2025"
                     },
                     {
-                        "Pl_inputb": "hiitest9",
+                        "Pl_inputb": 0,
                         "Pl_inputc": false,
                         "Pl_inputd": "hiitest9"
                     },
                     {
-                        "Pl_inputb": "hiitest9",
+                        "Pl_inputb": 0,
                         "Pl_inputc": false,
                         "Pl_inputd": "hiitest9"
                     }
@@ -454,57 +454,6 @@
                         {
                             "Tradeh": "hiitest9",
                             "hotMaili": "hiitest9"
-                        }
-                    ]
-                }
-            }
-        },
-        {
-            "z": {
-                "e": {
-                    "a": "nan"
-                },
-                "x": {
-                    "e": "nan"
-                },
-                "w": {
-                    "i": {
-                        "f": "nan"
-                    },
-                    "p": {
-                        "g": "nan"
-                    }
-                },
-                "q": [
-                    {
-                        "Pl_inputb": NaN,
-                        "Pl_inputc": false,
-                        "Pl_inputd": "nan"
-                    },
-                    {
-                        "Pl_inputb": NaN,
-                        "Pl_inputc": false,
-                        "Pl_inputd": "nan"
-                    },
-                    {
-                        "Pl_inputb": NaN,
-                        "Pl_inputc": false,
-                        "Pl_inputd": "nan"
-                    }
-                ],
-                "t": {
-                    "q": [
-                        {
-                            "Tradeh": "nan",
-                            "hotMaili": "nan"
-                        },
-                        {
-                            "Tradeh": "nan",
-                            "hotMaili": "nan"
-                        },
-                        {
-                            "Tradeh": "nan",
-                            "hotMaili": "nan"
                         }
                     ]
                 }
