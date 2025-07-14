@@ -1,0 +1,514 @@
+{
+    "Quote": [
+        {
+            "z": {
+                "e": {
+                    "a": "hiitest"
+                },
+                "x": {
+                    "e": "hiitest1"
+                },
+                "w": {
+                    "i": {
+                        "f": "hiitest1"
+                    },
+                    "p": {
+                        "g": "hiitest1"
+                    }
+                },
+                "q": [
+                    {
+                        "Pl_inputb": 12.0,
+                        "Pl_inputc": true,
+                        "Pl_inputd": "24-07-2025"
+                    },
+                    {
+                        "Pl_inputb": "hiitest1",
+                        "Pl_inputc": false,
+                        "Pl_inputd": "hiitest1"
+                    },
+                    {
+                        "Pl_inputb": "hiitest1",
+                        "Pl_inputc": false,
+                        "Pl_inputd": "hiitest1"
+                    }
+                ],
+                "t": {
+                    "q": [
+                        {
+                            "Tradeh": "hiitest1",
+                            "hotMaili": "hiitest1"
+                        },
+                        {
+                            "Tradeh": "hiitest1",
+                            "hotMaili": "hiitest1"
+                        },
+                        {
+                            "Tradeh": "hiitest1",
+                            "hotMaili": "hiitest1"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "z": {
+                "e": {
+                    "a": "hiitest"
+                },
+                "x": {
+                    "e": "hiitest2"
+                },
+                "w": {
+                    "i": {
+                        "f": "hiitest2"
+                    },
+                    "p": {
+                        "g": "hiitest2"
+                    }
+                },
+                "q": [
+                    {
+                        "Pl_inputb": 12.0,
+                        "Pl_inputc": false,
+                        "Pl_inputd": "25-07-2025"
+                    },
+                    {
+                        "Pl_inputb": "hiitest2",
+                        "Pl_inputc": false,
+                        "Pl_inputd": "hiitest2"
+                    },
+                    {
+                        "Pl_inputb": "hiitest2",
+                        "Pl_inputc": false,
+                        "Pl_inputd": "hiitest2"
+                    }
+                ],
+                "t": {
+                    "q": [
+                        {
+                            "Tradeh": "hiitest2",
+                            "hotMaili": "hiitest2"
+                        },
+                        {
+                            "Tradeh": "hiitest2",
+                            "hotMaili": "hiitest2"
+                        },
+                        {
+                            "Tradeh": "hiitest2",
+                            "hotMaili": "hiitest2"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "z": {
+                "e": {
+                    "a": "hiitest"
+                },
+                "x": {
+                    "e": "hiitest3"
+                },
+                "w": {
+                    "i": {
+                        "f": "hiitest3"
+                    },
+                    "p": {
+                        "g": "hiitest3"
+                    }
+                },
+                "q": [
+                    {
+                        "Pl_inputb": 12.0,
+                        "Pl_inputc": true,
+                        "Pl_inputd": "26-07-2025"
+                    },
+                    {
+                        "Pl_inputb": "hiitest3",
+                        "Pl_inputc": false,
+                        "Pl_inputd": "hiitest3"
+                    },
+                    {
+                        "Pl_inputb": "hiitest3",
+                        "Pl_inputc": false,
+                        "Pl_inputd": "hiitest3"
+                    }
+                ],
+                "t": {
+                    "q": [
+                        {
+                            "Tradeh": "hiitest3",
+                            "hotMaili": "hiitest3"
+                        },
+                        {
+                            "Tradeh": "hiitest3",
+                            "hotMaili": "hiitest3"
+                        },
+                        {
+                            "Tradeh": "hiitest3",
+                            "hotMaili": "hiitest3"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "z": {
+                "e": {
+                    "a": "hiitest"
+                },
+                "x": {
+                    "e": "hiitest4"
+                },
+                "w": {
+                    "i": {
+                        "f": "hiitest4"
+                    },
+                    "p": {
+                        "g": "hiitest4"
+                    }
+                },
+                "q": [
+                    {
+                        "Pl_inputb": 12.0,
+                        "Pl_inputc": false,
+                        "Pl_inputd": "27-07-2025"
+                    },
+                    {
+                        "Pl_inputb": "hiitest4",
+                        "Pl_inputc": false,
+                        "Pl_inputd": "hiitest4"
+                    },
+                    {
+                        "Pl_inputb": "hiitest4",
+                        "Pl_inputc": false,
+                        "Pl_inputd": "hiitest4"
+                    }
+                ],
+                "t": {
+                    "q": [
+                        {
+                            "Tradeh": "hiitest4",
+                            "hotMaili": "hiitest4"
+                        },
+                        {
+                            "Tradeh": "hiitest4",
+                            "hotMaili": "hiitest4"
+                        },
+                        {
+                            "Tradeh": "hiitest4",
+                            "hotMaili": "hiitest4"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "z": {
+                "e": {
+                    "a": "hiitest"
+                },
+                "x": {
+                    "e": "hiitest5"
+                },
+                "w": {
+                    "i": {
+                        "f": "hiitest5"
+                    },
+                    "p": {
+                        "g": "hiitest5"
+                    }
+                },
+                "q": [
+                    {
+                        "Pl_inputb": 12.0,
+                        "Pl_inputc": true,
+                        "Pl_inputd": "28-07-2025"
+                    },
+                    {
+                        "Pl_inputb": "hiitest5",
+                        "Pl_inputc": false,
+                        "Pl_inputd": "hiitest5"
+                    },
+                    {
+                        "Pl_inputb": "hiitest5",
+                        "Pl_inputc": false,
+                        "Pl_inputd": "hiitest5"
+                    }
+                ],
+                "t": {
+                    "q": [
+                        {
+                            "Tradeh": "hiitest5",
+                            "hotMaili": "hiitest5"
+                        },
+                        {
+                            "Tradeh": "hiitest5",
+                            "hotMaili": "hiitest5"
+                        },
+                        {
+                            "Tradeh": "hiitest5",
+                            "hotMaili": "hiitest5"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "z": {
+                "e": {
+                    "a": "hiitest"
+                },
+                "x": {
+                    "e": "hiitest6"
+                },
+                "w": {
+                    "i": {
+                        "f": "hiitest6"
+                    },
+                    "p": {
+                        "g": "hiitest6"
+                    }
+                },
+                "q": [
+                    {
+                        "Pl_inputb": 12.0,
+                        "Pl_inputc": false,
+                        "Pl_inputd": "29-07-2025"
+                    },
+                    {
+                        "Pl_inputb": "hiitest6",
+                        "Pl_inputc": false,
+                        "Pl_inputd": "hiitest6"
+                    },
+                    {
+                        "Pl_inputb": "hiitest6",
+                        "Pl_inputc": false,
+                        "Pl_inputd": "hiitest6"
+                    }
+                ],
+                "t": {
+                    "q": [
+                        {
+                            "Tradeh": "hiitest6",
+                            "hotMaili": "hiitest6"
+                        },
+                        {
+                            "Tradeh": "hiitest6",
+                            "hotMaili": "hiitest6"
+                        },
+                        {
+                            "Tradeh": "hiitest6",
+                            "hotMaili": "hiitest6"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "z": {
+                "e": {
+                    "a": "hiitest"
+                },
+                "x": {
+                    "e": "hiitest7"
+                },
+                "w": {
+                    "i": {
+                        "f": "hiitest7"
+                    },
+                    "p": {
+                        "g": "hiitest7"
+                    }
+                },
+                "q": [
+                    {
+                        "Pl_inputb": 12.0,
+                        "Pl_inputc": true,
+                        "Pl_inputd": "30-07-2025"
+                    },
+                    {
+                        "Pl_inputb": "hiitest7",
+                        "Pl_inputc": false,
+                        "Pl_inputd": "hiitest7"
+                    },
+                    {
+                        "Pl_inputb": "hiitest7",
+                        "Pl_inputc": false,
+                        "Pl_inputd": "hiitest7"
+                    }
+                ],
+                "t": {
+                    "q": [
+                        {
+                            "Tradeh": "hiitest7",
+                            "hotMaili": "hiitest7"
+                        },
+                        {
+                            "Tradeh": "hiitest7",
+                            "hotMaili": "hiitest7"
+                        },
+                        {
+                            "Tradeh": "hiitest7",
+                            "hotMaili": "hiitest7"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "z": {
+                "e": {
+                    "a": "hiitest"
+                },
+                "x": {
+                    "e": "hiitest8"
+                },
+                "w": {
+                    "i": {
+                        "f": "hiitest8"
+                    },
+                    "p": {
+                        "g": "hiitest8"
+                    }
+                },
+                "q": [
+                    {
+                        "Pl_inputb": 12.0,
+                        "Pl_inputc": false,
+                        "Pl_inputd": "31-07-2025"
+                    },
+                    {
+                        "Pl_inputb": "hiitest8",
+                        "Pl_inputc": false,
+                        "Pl_inputd": "hiitest8"
+                    },
+                    {
+                        "Pl_inputb": "hiitest8",
+                        "Pl_inputc": false,
+                        "Pl_inputd": "hiitest8"
+                    }
+                ],
+                "t": {
+                    "q": [
+                        {
+                            "Tradeh": "hiitest8",
+                            "hotMaili": "hiitest8"
+                        },
+                        {
+                            "Tradeh": "hiitest8",
+                            "hotMaili": "hiitest8"
+                        },
+                        {
+                            "Tradeh": "hiitest8",
+                            "hotMaili": "hiitest8"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "z": {
+                "e": {
+                    "a": "hiitest"
+                },
+                "x": {
+                    "e": "hiitest9"
+                },
+                "w": {
+                    "i": {
+                        "f": "hiitest9"
+                    },
+                    "p": {
+                        "g": "hiitest9"
+                    }
+                },
+                "q": [
+                    {
+                        "Pl_inputb": 12.0,
+                        "Pl_inputc": true,
+                        "Pl_inputd": "01-08-2025"
+                    },
+                    {
+                        "Pl_inputb": "hiitest9",
+                        "Pl_inputc": false,
+                        "Pl_inputd": "hiitest9"
+                    },
+                    {
+                        "Pl_inputb": "hiitest9",
+                        "Pl_inputc": false,
+                        "Pl_inputd": "hiitest9"
+                    }
+                ],
+                "t": {
+                    "q": [
+                        {
+                            "Tradeh": "hiitest9",
+                            "hotMaili": "hiitest9"
+                        },
+                        {
+                            "Tradeh": "hiitest9",
+                            "hotMaili": "hiitest9"
+                        },
+                        {
+                            "Tradeh": "hiitest9",
+                            "hotMaili": "hiitest9"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "z": {
+                "e": {
+                    "a": "nan"
+                },
+                "x": {
+                    "e": "nan"
+                },
+                "w": {
+                    "i": {
+                        "f": "nan"
+                    },
+                    "p": {
+                        "g": "nan"
+                    }
+                },
+                "q": [
+                    {
+                        "Pl_inputb": NaN,
+                        "Pl_inputc": false,
+                        "Pl_inputd": "nan"
+                    },
+                    {
+                        "Pl_inputb": NaN,
+                        "Pl_inputc": false,
+                        "Pl_inputd": "nan"
+                    },
+                    {
+                        "Pl_inputb": NaN,
+                        "Pl_inputc": false,
+                        "Pl_inputd": "nan"
+                    }
+                ],
+                "t": {
+                    "q": [
+                        {
+                            "Tradeh": "nan",
+                            "hotMaili": "nan"
+                        },
+                        {
+                            "Tradeh": "nan",
+                            "hotMaili": "nan"
+                        },
+                        {
+                            "Tradeh": "nan",
+                            "hotMaili": "nan"
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}
