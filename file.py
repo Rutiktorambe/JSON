@@ -40,12 +40,20 @@ def convert_value(val, dtype):
     return val
 
 def insert_path_nested(d, path, key, value):
+    """Ensure multiple non-list vars under same path merge instead of overwrite"""
     keys = path.split('/')
     for k in keys[:-1]:
         d = d.setdefault(k, {})
-    d[keys[-1]] = {key: value}
+
+    last_key = keys[-1]
+    if last_key not in d:
+        d[last_key] = {}
+
+    # ✅ Merge instead of overwriting
+    d[last_key][key] = value
 
 def insert_path_direct(d, path, value_dict):
+    """For list fields, directly assign the list at path"""
     keys = path.split('/')
     for k in keys[:-1]:
         d = d.setdefault(k, {})
@@ -68,7 +76,7 @@ def process_row(row, mappings, all_headers):
         samed_lc = samed.lower() if samed else ""
 
         if mtype == "list":
-            # e.g., pl_input1_b or fallback plinputB_alt1
+            # Primary & fallback patterns for list fields
             pattern_primary = re.compile(rf"{prefix_lc}(\d+)[_]?{var_lc}$")
             pattern_fallback = re.compile(rf"{samed_lc}(\d+)$") if samed_lc else None
             matched = False
@@ -80,18 +88,19 @@ def process_row(row, mappings, all_headers):
 
                 if match:
                     idx = int(match.group(1)) - 1
-                    field_name = f"{prefix}{var}"
+                    field_name = f"{prefix}{var}"  # preserve original case in key
                     value = convert_value(row_dict.get(col_lc, None), dtype)
                     list_struct[path][idx][field_name] = value
                     list_field_max_index[path] = max(list_field_max_index[path], idx + 1)
                     matched = True
 
             if not matched:
+                # if no matching columns at all, still initialize one item
                 list_struct[path][0][f"{prefix}{var}"] = get_default_value(dtype)
                 list_field_max_index[path] = max(list_field_max_index[path], 1)
 
         else:
-            # Non-list fields
+            # Non-list fields → merge multiple under same path
             value = None
             if var_lc in row_dict:
                 value = convert_value(row_dict[var_lc], dtype)
@@ -122,6 +131,9 @@ def process_csv_to_json(mapping_file, csv_file, output_file):
     with open(output_file, 'w') as f:
         json.dump(result, f, indent=4)
     print(f"✅ Output saved to {output_file}")
+
+# Example Run
+# process_csv_to_json("working mapping.xlsm", "rrf.csv", "output.json")
 
 
 
