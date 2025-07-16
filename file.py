@@ -19,17 +19,29 @@ def read_mapping(mapping_path):
         else:
             samed_val = str(samed_val).strip()
 
+        # === DEFAULT FEATURE START ===
+        # Read Default column (if you remove default feature, delete this block)
+        default_val = row.get('Default', '')
+        if pd.isna(default_val):
+            default_val = ''
+        # === DEFAULT FEATURE END ===
+
         mappings.append({
             'type': str(row.get('Type', '')).strip().lower(),
             'var': str(row['Variable']).strip(),
             'prefix': prefix_val,
             'path': str(row['Path']).strip(),
             'datatype': str(row['DataType']).strip().lower(),
-            'samed': samed_val
+            'samed': samed_val,
+            # === DEFAULT FEATURE START ===
+            # Store default in mapping (delete if removing default feature)
+            'Default': str(default_val).strip(),
+            # === DEFAULT FEATURE END ===
         })
     return mappings
 
 def get_default_value(dtype):
+    """Standard fallback if both CSV and Mapping default are missing"""
     return {
         "string": "",
         "date": "",
@@ -38,6 +50,7 @@ def get_default_value(dtype):
     }.get(dtype, None)
 
 def convert_value(val, dtype):
+    """Normal converter (when val exists)"""
     if pd.isna(val):
         return get_default_value(dtype)
     try:
@@ -50,6 +63,35 @@ def convert_value(val, dtype):
     except:
         return get_default_value(dtype)
     return val
+
+# === DEFAULT FEATURE START ===
+def convert_value_with_default(csv_val, dtype, mapping_default):
+    """
+    Default-aware converter:
+      1. If CSV has a value → normal conversion
+      2. If CSV missing/empty → try mapping_default
+      3. If mapping_default empty → fallback to datatype default
+    Remove this function if you remove default feature
+    """
+    if pd.isna(csv_val) or (isinstance(csv_val, str) and csv_val.strip() == ""):
+        # CSV is empty → try mapping default
+        if mapping_default and mapping_default.strip() != "":
+            try:
+                if dtype == "number":
+                    return float(mapping_default)
+                elif dtype == "boolean":
+                    return str(mapping_default).strip().lower() in ["true", "1", "yes"]
+                elif dtype in ["string", "date"]:
+                    return str(mapping_default)
+            except:
+                # if mapping default cannot be converted, fallback
+                return get_default_value(dtype)
+        else:
+            return get_default_value(dtype)
+    else:
+        # CSV has a value → normal conversion
+        return convert_value(csv_val, dtype)
+# === DEFAULT FEATURE END ===
 
 def insert_path_nested(d, path, key, value):
     keys = path.split('/')
@@ -66,7 +108,7 @@ def insert_path_direct(d, path, value_dict):
         d = d.setdefault(k, {})
     d[keys[-1]] = value_dict
 
-def process_row(row, mappings, all_headers):
+def process_row_with_default(row, mappings, all_headers):
     final = {}
     list_struct = defaultdict(lambda: defaultdict(dict))
 
@@ -82,12 +124,22 @@ def process_row(row, mappings, all_headers):
             list_vars_by_path[m['path']].append(m)
 
     for m in mappings:
-        mtype, var, prefix, path, dtype, samed = m.values()
+        mtype = m['type']
+        var = m['var']
+        prefix = m['prefix']
+        path = m['path']
+        dtype = m['datatype']
+        samed = m['samed']
+        # === DEFAULT FEATURE START ===
+        mapping_default = m.get('Default', "")  # get default for this field
+        # === DEFAULT FEATURE END ===
+
         var_lc = var.lower()
-        prefix_lc = prefix.lower()
+        prefix_lc = prefix.lower() if prefix else ""
         samed_lc = samed.lower() if samed else ""
 
         if mtype == "list":
+            # Regex for numbered list columns like Pl_input1_b
             pattern_primary = re.compile(rf"{prefix_lc}(\d+)[_]?{var_lc}$")
             pattern_fallback = re.compile(rf"{samed_lc}(\d+)$") if samed_lc else None
             matched = False
@@ -99,7 +151,11 @@ def process_row(row, mappings, all_headers):
                 if match:
                     idx = int(match.group(1)) - 1
                     field_name = f"{prefix}{var}" if prefix else var
-                    value = convert_value(row_dict.get(col_lc, None), dtype)
+                    csv_val = row_dict.get(col_lc, None)
+                    # === DEFAULT FEATURE START ===
+                    # use default-aware converter
+                    value = convert_value_with_default(csv_val, dtype, mapping_default)
+                    # === DEFAULT FEATURE END ===
                     list_struct[path][idx][field_name] = value
                     list_field_max_index[path] = max(list_field_max_index[path], idx + 1)
                     matched = True
@@ -108,35 +164,55 @@ def process_row(row, mappings, all_headers):
             if not matched:
                 single_col = f"{prefix}{var}" if prefix else var
                 if single_col.lower() in row_dict:
-                    value = convert_value(row_dict[single_col.lower()], dtype)
+                    csv_val = row_dict[single_col.lower()]
+                    # === DEFAULT FEATURE START ===
+                    value = convert_value_with_default(csv_val, dtype, mapping_default)
+                    # === DEFAULT FEATURE END ===
                     list_struct[path][0][single_col] = value
                     list_field_max_index[path] = max(list_field_max_index[path], 1)
                     matched = True
 
+            # If column not found at all, still keep structure with mapping default
             if not matched:
                 fallback_name = f"{prefix}{var}" if prefix else var
-                list_struct[path][0][fallback_name] = get_default_value(dtype)
+                # === DEFAULT FEATURE START ===
+                value = convert_value_with_default(None, dtype, mapping_default)
+                # === DEFAULT FEATURE END ===
+                list_struct[path][0][fallback_name] = value
                 list_field_max_index[path] = max(list_field_max_index[path], 1)
 
         else:
+            # Non-list fields → merge multiple under same path
             if var_lc in row_dict:
-                value = convert_value(row_dict[var_lc], dtype)
+                csv_val = row_dict[var_lc]
+                # === DEFAULT FEATURE START ===
+                value = convert_value_with_default(csv_val, dtype, mapping_default)
+                # === DEFAULT FEATURE END ===
             elif samed_lc and samed_lc in row_dict:
-                value = convert_value(row_dict[samed_lc], dtype)
+                csv_val = row_dict[samed_lc]
+                # === DEFAULT FEATURE START ===
+                value = convert_value_with_default(csv_val, dtype, mapping_default)
+                # === DEFAULT FEATURE END ===
             else:
-                value = get_default_value(dtype)
+                # no CSV column → use mapping default
+                # === DEFAULT FEATURE START ===
+                value = convert_value_with_default(None, dtype, mapping_default)
+                # === DEFAULT FEATURE END ===
             insert_path_nested(final, path, var, value)
 
-    # Fill missing variables in each list item with default values
+    # Finalize list items → ensure all vars exist
     for path, max_index in list_field_max_index.items():
         vars_for_path = list_vars_by_path[path]
         items = []
         for i in range(max_index):
             item = list_struct[path].get(i, {})
             for mvar in vars_for_path:
-                var_name = f"{mvar['prefix']}{mvar['var']}" if mvar['prefix'] else mvar['var']
-                if var_name not in item:
-                    item[var_name] = get_default_value(mvar['datatype'])
+                vname = f"{mvar['prefix']}{mvar['var']}" if mvar['prefix'] else mvar['var']
+                if vname not in item:
+                    # === DEFAULT FEATURE START ===
+                    # fill missing list key with mapping default
+                    item[vname] = convert_value_with_default(None, mvar['datatype'], mvar.get('Default', ""))
+                    # === DEFAULT FEATURE END ===
             items.append(item)
         insert_path_direct(final, path, items)
 
@@ -149,11 +225,11 @@ def process_csv_to_json(mapping_file, csv_file, output_file):
 
     result = {"Quote": []}
     for _, row in df.iterrows():
-        result["Quote"].append(process_row(row, mappings, all_headers))
+        result["Quote"].append(process_row_with_default(row, mappings, all_headers))
 
     with open(output_file, 'w') as f:
         json.dump(result, f, indent=4)
     print(f"✅ Output saved to {output_file}")
 
-# Example usage
+# === RUN ===
 process_csv_to_json("working mapping.xlsx", "rrf.csv", "output.json")
