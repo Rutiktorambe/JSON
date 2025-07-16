@@ -2,25 +2,24 @@
     "Quote": [
         {
             "z": {
-                "e": {
+                "q": {
                     "a": "hiitest"
                 },
-                "x": {
+                "p": {
                     "e": "hiitest1",
-                    "x": ""
+                    "f": "hiitest1",
+                    "g": "hiitest1"
                 },
-                "w": {
-                    "i": {
-                        "f": "hiitest1"
-                    },
-                    "p": {
-                        "g": "hiitest1"
-                    }
+                "r": {
+                    "x": "",
+                    "o": "qq",
+                    "a1": "",
+                    "a2": "",
+                    "a3": "",
+                    "a4": "",
+                    "a5": ""
                 },
-                "o": {
-                    "o": "qq"
-                },
-                "q": [
+                "e": [
                     {
                         "Pl_inputb": 12.0,
                         "Pl_inputc": true,
@@ -37,52 +36,55 @@
                         "Pl_inputd": ""
                     }
                 ],
-                "t": {
-                    "q": [
-                        {
-                            "Tradeh": "hiitest1",
-                            "hotMaili": "hiitest1"
-                        },
-                        {
-                            "Tradeh": "hiitest1",
-                            "hotMaili": "hiitest1"
-                        },
-                        {
-                            "Tradeh": "hiitest1",
-                            "hotMaili": "hiitest1"
-                        }
-                    ]
-                }
-            },
-            "w": {
-                "a1": "",
-                "a2": "",
-                "a3": "",
-                "a4": "",
-                "a5": ""
+                "t": [
+                    {
+                        "Tradeh": "hiitest1",
+                        "hotMaili": "hiitest1"
+                    },
+                    {
+                        "Tradeh": "hiitest1",
+                        "hotMaili": "hiitest1"
+                    },
+                    {
+                        "Tradeh": "hiitest1",
+                        "hotMaili": "hiitest1"
+                    }
+                ],
+                "op": [
+                    {
+                        "qeq": "w",
+                        "te": "",
+                        "rx": ""
+                    },
+                    {
+                        "qeq": "w"
+                    },
+                    {
+                        "qeq": "w"
+                    }
+                ]
             }
         },
         {
             "z": {
-                "e": {
+                "q": {
                     "a": "hiitest"
                 },
-                "x": {
+                "p": {
                     "e": "hiitest2",
-                    "x": ""
+                    "f": "hiitest2",
+                    "g": "hiitest2"
                 },
-                "w": {
-                    "i": {
-                        "f": "hiitest2"
-                    },
-                    "p": {
-                        "g": "hiitest2"
-                    }
+                "r": {
+                    "x": "",
+                    "o": "qq",
+                    "a1": "",
+                    "a2": "",
+                    "a3": "",
+                    "a4": "",
+                    "a5": ""
                 },
-                "o": {
-                    "o": "qq"
-                },
-                "q": [
+                "e": [
                     {
                         "Pl_inputb": 12.0,
                         "Pl_inputc": false,
@@ -99,52 +101,55 @@
                         "Pl_inputd": "hiitest2"
                     }
                 ],
-                "t": {
-                    "q": [
-                        {
-                            "Tradeh": "hiitest2",
-                            "hotMaili": "hiitest2"
-                        },
-                        {
-                            "Tradeh": "hiitest2",
-                            "hotMaili": "hiitest2"
-                        },
-                        {
-                            "Tradeh": "hiitest2",
-                            "hotMaili": "hiitest2"
-                        }
-                    ]
-                }
-            },
-            "w": {
-                "a1": "",
-                "a2": "",
-                "a3": "",
-                "a4": "",
-                "a5": ""
+                "t": [
+                    {
+                        "Tradeh": "hiitest2",
+                        "hotMaili": "hiitest2"
+                    },
+                    {
+                        "Tradeh": "hiitest2",
+                        "hotMaili": "hiitest2"
+                    },
+                    {
+                        "Tradeh": "hiitest2",
+                        "hotMaili": "hiitest2"
+                    }
+                ],
+                "op": [
+                    {
+                        "qeq": "w",
+                        "te": "",
+                        "rx": ""
+                    },
+                    {
+                        "qeq": "w"
+                    },
+                    {
+                        "qeq": "w"
+                    }
+                ]
             }
         },
         {
             "z": {
-                "e": {
+                "q": {
                     "a": "hiitest"
                 },
-                "x": {
+                "p": {
                     "e": "hiitest3",
-                    "x": ""
+                    "f": "hiitest3",
+                    "g": "hiitest3"
                 },
-                "w": {
-                    "i": {
-                        "f": "hiitest3"
-                    },
-                    "p": {
-                        "g": "hiitest3"
-                    }
+                "r": {
+                    "x": "",
+                    "o": "qq",
+                    "a1": "",
+                    "a2": "",
+                    "a3": "",
+                    "a4": "",
+                    "a5": ""
                 },
-                "o": {
-                    "o": "qq"
-                },
-                "q": [
+                "e": [
                     {
                         "Pl_inputb": 12.0,
                         "Pl_inputc": true,
@@ -161,52 +166,55 @@
                         "Pl_inputd": "hiitest3"
                     }
                 ],
-                "t": {
-                    "q": [
-                        {
-                            "Tradeh": "hiitest3",
-                            "hotMaili": "hiitest3"
-                        },
-                        {
-                            "Tradeh": "hiitest3",
-                            "hotMaili": "hiitest3"
-                        },
-                        {
-                            "Tradeh": "hiitest3",
-                            "hotMaili": "hiitest3"
-                        }
-                    ]
-                }
-            },
-            "w": {
-                "a1": "",
-                "a2": "",
-                "a3": "",
-                "a4": "",
-                "a5": ""
+                "t": [
+                    {
+                        "Tradeh": "hiitest3",
+                        "hotMaili": "hiitest3"
+                    },
+                    {
+                        "Tradeh": "hiitest3",
+                        "hotMaili": "hiitest3"
+                    },
+                    {
+                        "Tradeh": "hiitest3",
+                        "hotMaili": "hiitest3"
+                    }
+                ],
+                "op": [
+                    {
+                        "qeq": "w",
+                        "te": "",
+                        "rx": ""
+                    },
+                    {
+                        "qeq": "w"
+                    },
+                    {
+                        "qeq": "w"
+                    }
+                ]
             }
         },
         {
             "z": {
-                "e": {
+                "q": {
                     "a": "hiitest"
                 },
-                "x": {
+                "p": {
                     "e": "hiitest4",
-                    "x": ""
+                    "f": "hiitest4",
+                    "g": "hiitest4"
                 },
-                "w": {
-                    "i": {
-                        "f": "hiitest4"
-                    },
-                    "p": {
-                        "g": "hiitest4"
-                    }
+                "r": {
+                    "x": "",
+                    "o": "qq",
+                    "a1": "",
+                    "a2": "",
+                    "a3": "",
+                    "a4": "",
+                    "a5": ""
                 },
-                "o": {
-                    "o": "qq"
-                },
-                "q": [
+                "e": [
                     {
                         "Pl_inputb": 12.0,
                         "Pl_inputc": false,
@@ -223,52 +231,55 @@
                         "Pl_inputd": "hiitest4"
                     }
                 ],
-                "t": {
-                    "q": [
-                        {
-                            "Tradeh": "hiitest4",
-                            "hotMaili": "hiitest4"
-                        },
-                        {
-                            "Tradeh": "hiitest4",
-                            "hotMaili": "hiitest4"
-                        },
-                        {
-                            "Tradeh": "hiitest4",
-                            "hotMaili": "hiitest4"
-                        }
-                    ]
-                }
-            },
-            "w": {
-                "a1": "",
-                "a2": "",
-                "a3": "",
-                "a4": "",
-                "a5": ""
+                "t": [
+                    {
+                        "Tradeh": "hiitest4",
+                        "hotMaili": "hiitest4"
+                    },
+                    {
+                        "Tradeh": "hiitest4",
+                        "hotMaili": "hiitest4"
+                    },
+                    {
+                        "Tradeh": "hiitest4",
+                        "hotMaili": "hiitest4"
+                    }
+                ],
+                "op": [
+                    {
+                        "qeq": "w",
+                        "te": "",
+                        "rx": ""
+                    },
+                    {
+                        "qeq": "w"
+                    },
+                    {
+                        "qeq": "w"
+                    }
+                ]
             }
         },
         {
             "z": {
-                "e": {
+                "q": {
                     "a": "hiitest"
                 },
-                "x": {
+                "p": {
                     "e": "hiitest5",
-                    "x": ""
+                    "f": "hiitest5",
+                    "g": "hiitest5"
                 },
-                "w": {
-                    "i": {
-                        "f": "hiitest5"
-                    },
-                    "p": {
-                        "g": "hiitest5"
-                    }
+                "r": {
+                    "x": "",
+                    "o": "qq",
+                    "a1": "",
+                    "a2": "",
+                    "a3": "",
+                    "a4": "",
+                    "a5": ""
                 },
-                "o": {
-                    "o": "qq"
-                },
-                "q": [
+                "e": [
                     {
                         "Pl_inputb": 12.0,
                         "Pl_inputc": true,
@@ -285,52 +296,55 @@
                         "Pl_inputd": "hiitest5"
                     }
                 ],
-                "t": {
-                    "q": [
-                        {
-                            "Tradeh": "hiitest5",
-                            "hotMaili": "hiitest5"
-                        },
-                        {
-                            "Tradeh": "hiitest5",
-                            "hotMaili": "hiitest5"
-                        },
-                        {
-                            "Tradeh": "hiitest5",
-                            "hotMaili": "hiitest5"
-                        }
-                    ]
-                }
-            },
-            "w": {
-                "a1": "",
-                "a2": "",
-                "a3": "",
-                "a4": "",
-                "a5": ""
+                "t": [
+                    {
+                        "Tradeh": "hiitest5",
+                        "hotMaili": "hiitest5"
+                    },
+                    {
+                        "Tradeh": "hiitest5",
+                        "hotMaili": "hiitest5"
+                    },
+                    {
+                        "Tradeh": "hiitest5",
+                        "hotMaili": "hiitest5"
+                    }
+                ],
+                "op": [
+                    {
+                        "qeq": "w",
+                        "te": "",
+                        "rx": ""
+                    },
+                    {
+                        "qeq": "w"
+                    },
+                    {
+                        "qeq": "w"
+                    }
+                ]
             }
         },
         {
             "z": {
-                "e": {
+                "q": {
                     "a": "hiitest"
                 },
-                "x": {
+                "p": {
                     "e": "hiitest6",
-                    "x": ""
+                    "f": "hiitest6",
+                    "g": "hiitest6"
                 },
-                "w": {
-                    "i": {
-                        "f": "hiitest6"
-                    },
-                    "p": {
-                        "g": "hiitest6"
-                    }
+                "r": {
+                    "x": "",
+                    "o": "qq",
+                    "a1": "",
+                    "a2": "",
+                    "a3": "",
+                    "a4": "",
+                    "a5": ""
                 },
-                "o": {
-                    "o": "qq"
-                },
-                "q": [
+                "e": [
                     {
                         "Pl_inputb": 12.0,
                         "Pl_inputc": false,
@@ -347,52 +361,55 @@
                         "Pl_inputd": "hiitest6"
                     }
                 ],
-                "t": {
-                    "q": [
-                        {
-                            "Tradeh": "hiitest6",
-                            "hotMaili": "hiitest6"
-                        },
-                        {
-                            "Tradeh": "hiitest6",
-                            "hotMaili": "hiitest6"
-                        },
-                        {
-                            "Tradeh": "hiitest6",
-                            "hotMaili": "hiitest6"
-                        }
-                    ]
-                }
-            },
-            "w": {
-                "a1": "",
-                "a2": "",
-                "a3": "",
-                "a4": "",
-                "a5": ""
+                "t": [
+                    {
+                        "Tradeh": "hiitest6",
+                        "hotMaili": "hiitest6"
+                    },
+                    {
+                        "Tradeh": "hiitest6",
+                        "hotMaili": "hiitest6"
+                    },
+                    {
+                        "Tradeh": "hiitest6",
+                        "hotMaili": "hiitest6"
+                    }
+                ],
+                "op": [
+                    {
+                        "qeq": "w",
+                        "te": "",
+                        "rx": ""
+                    },
+                    {
+                        "qeq": "w"
+                    },
+                    {
+                        "qeq": "w"
+                    }
+                ]
             }
         },
         {
             "z": {
-                "e": {
+                "q": {
                     "a": "hiitest"
                 },
-                "x": {
+                "p": {
                     "e": "hiitest7",
-                    "x": ""
+                    "f": "hiitest7",
+                    "g": "hiitest7"
                 },
-                "w": {
-                    "i": {
-                        "f": "hiitest7"
-                    },
-                    "p": {
-                        "g": "hiitest7"
-                    }
+                "r": {
+                    "x": "",
+                    "o": "qq",
+                    "a1": "",
+                    "a2": "",
+                    "a3": "",
+                    "a4": "",
+                    "a5": ""
                 },
-                "o": {
-                    "o": "qq"
-                },
-                "q": [
+                "e": [
                     {
                         "Pl_inputb": 12.0,
                         "Pl_inputc": true,
@@ -409,52 +426,55 @@
                         "Pl_inputd": "hiitest7"
                     }
                 ],
-                "t": {
-                    "q": [
-                        {
-                            "Tradeh": "hiitest7",
-                            "hotMaili": "hiitest7"
-                        },
-                        {
-                            "Tradeh": "hiitest7",
-                            "hotMaili": "hiitest7"
-                        },
-                        {
-                            "Tradeh": "hiitest7",
-                            "hotMaili": "hiitest7"
-                        }
-                    ]
-                }
-            },
-            "w": {
-                "a1": "",
-                "a2": "",
-                "a3": "",
-                "a4": "",
-                "a5": ""
+                "t": [
+                    {
+                        "Tradeh": "hiitest7",
+                        "hotMaili": "hiitest7"
+                    },
+                    {
+                        "Tradeh": "hiitest7",
+                        "hotMaili": "hiitest7"
+                    },
+                    {
+                        "Tradeh": "hiitest7",
+                        "hotMaili": "hiitest7"
+                    }
+                ],
+                "op": [
+                    {
+                        "qeq": "w",
+                        "te": "",
+                        "rx": ""
+                    },
+                    {
+                        "qeq": "w"
+                    },
+                    {
+                        "qeq": "w"
+                    }
+                ]
             }
         },
         {
             "z": {
-                "e": {
+                "q": {
                     "a": "hiitest"
                 },
-                "x": {
+                "p": {
                     "e": "hiitest8",
-                    "x": ""
+                    "f": "hiitest8",
+                    "g": "hiitest8"
                 },
-                "w": {
-                    "i": {
-                        "f": "hiitest8"
-                    },
-                    "p": {
-                        "g": "hiitest8"
-                    }
+                "r": {
+                    "x": "",
+                    "o": "qq",
+                    "a1": "",
+                    "a2": "",
+                    "a3": "",
+                    "a4": "",
+                    "a5": ""
                 },
-                "o": {
-                    "o": "qq"
-                },
-                "q": [
+                "e": [
                     {
                         "Pl_inputb": 12.0,
                         "Pl_inputc": false,
@@ -471,52 +491,55 @@
                         "Pl_inputd": "hiitest8"
                     }
                 ],
-                "t": {
-                    "q": [
-                        {
-                            "Tradeh": "hiitest8",
-                            "hotMaili": "hiitest8"
-                        },
-                        {
-                            "Tradeh": "hiitest8",
-                            "hotMaili": "hiitest8"
-                        },
-                        {
-                            "Tradeh": "hiitest8",
-                            "hotMaili": "hiitest8"
-                        }
-                    ]
-                }
-            },
-            "w": {
-                "a1": "",
-                "a2": "",
-                "a3": "",
-                "a4": "",
-                "a5": ""
+                "t": [
+                    {
+                        "Tradeh": "hiitest8",
+                        "hotMaili": "hiitest8"
+                    },
+                    {
+                        "Tradeh": "hiitest8",
+                        "hotMaili": "hiitest8"
+                    },
+                    {
+                        "Tradeh": "hiitest8",
+                        "hotMaili": "hiitest8"
+                    }
+                ],
+                "op": [
+                    {
+                        "qeq": "w",
+                        "te": "",
+                        "rx": ""
+                    },
+                    {
+                        "qeq": "w"
+                    },
+                    {
+                        "qeq": "w"
+                    }
+                ]
             }
         },
         {
             "z": {
-                "e": {
+                "q": {
                     "a": "hiitest"
                 },
-                "x": {
+                "p": {
                     "e": "hiitest9",
-                    "x": ""
+                    "f": "hiitest9",
+                    "g": "hiitest9"
                 },
-                "w": {
-                    "i": {
-                        "f": "hiitest9"
-                    },
-                    "p": {
-                        "g": "hiitest9"
-                    }
+                "r": {
+                    "x": "",
+                    "o": "qq",
+                    "a1": "",
+                    "a2": "",
+                    "a3": "",
+                    "a4": "",
+                    "a5": ""
                 },
-                "o": {
-                    "o": "qq"
-                },
-                "q": [
+                "e": [
                     {
                         "Pl_inputb": 12.0,
                         "Pl_inputc": true,
@@ -533,91 +556,33 @@
                         "Pl_inputd": "hiitest9"
                     }
                 ],
-                "t": {
-                    "q": [
-                        {
-                            "Tradeh": "hiitest9",
-                            "hotMaili": "hiitest9"
-                        },
-                        {
-                            "Tradeh": "hiitest9",
-                            "hotMaili": "hiitest9"
-                        },
-                        {
-                            "Tradeh": "hiitest9",
-                            "hotMaili": "hiitest9"
-                        }
-                    ]
-                }
-            },
-            "w": {
-                "a1": "",
-                "a2": "",
-                "a3": "",
-                "a4": "",
-                "a5": ""
-            }
-        },
-        {
-            "z": {
-                "e": {
-                    "a": ""
-                },
-                "x": {
-                    "e": "",
-                    "x": ""
-                },
-                "w": {
-                    "i": {
-                        "f": ""
-                    },
-                    "p": {
-                        "g": ""
-                    }
-                },
-                "o": {
-                    "o": "qq"
-                },
-                "q": [
+                "t": [
                     {
-                        "Pl_inputb": 0,
-                        "Pl_inputc": false,
-                        "Pl_inputd": ""
+                        "Tradeh": "hiitest9",
+                        "hotMaili": "hiitest9"
                     },
                     {
-                        "Pl_inputb": 0,
-                        "Pl_inputc": false,
-                        "Pl_inputd": ""
+                        "Tradeh": "hiitest9",
+                        "hotMaili": "hiitest9"
                     },
                     {
-                        "Pl_inputb": 0,
-                        "Pl_inputc": false,
-                        "Pl_inputd": ""
+                        "Tradeh": "hiitest9",
+                        "hotMaili": "hiitest9"
                     }
                 ],
-                "t": {
-                    "q": [
-                        {
-                            "Tradeh": "",
-                            "hotMaili": ""
-                        },
-                        {
-                            "Tradeh": "",
-                            "hotMaili": ""
-                        },
-                        {
-                            "Tradeh": "",
-                            "hotMaili": ""
-                        }
-                    ]
-                }
-            },
-            "w": {
-                "a1": "",
-                "a2": "",
-                "a3": "",
-                "a4": "",
-                "a5": ""
+                "op": [
+                    {
+                        "qeq": "w",
+                        "te": "",
+                        "rx": ""
+                    },
+                    {
+                        "qeq": "w"
+                    },
+                    {
+                        "qeq": "w"
+                    }
+                ]
             }
         }
     ]

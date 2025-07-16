@@ -7,13 +7,28 @@ def read_mapping(mapping_path):
     df = pd.read_excel(mapping_path)
     mappings = []
     for _, row in df.iterrows():
+
+        # Fix NaN in prefix
+        prefix_val = row.get('prefix', '')
+        if pd.isna(prefix_val):
+            prefix_val = ''
+        else:
+            prefix_val = str(prefix_val).strip()
+
+        # Fix NaN in samed
+        samed_val = row.get('samed', '')
+        if pd.isna(samed_val):
+            samed_val = ''
+        else:
+            samed_val = str(samed_val).strip()
+
         mappings.append({
             'type': str(row.get('Type', '')).strip().lower(),
             'var': str(row['Variable']).strip(),
-            'prefix': str(row['prefix']).strip(),
+            'prefix': prefix_val,
             'path': str(row['Path']).strip(),
             'datatype': str(row['DataType']).strip().lower(),
-            'samed': str(row.get('samed', '')).strip()
+            'samed': samed_val
         })
     return mappings
 
@@ -49,7 +64,6 @@ def insert_path_nested(d, path, key, value):
     if last_key not in d:
         d[last_key] = {}
 
-    # ✅ Merge instead of overwriting
     d[last_key][key] = value
 
 def insert_path_direct(d, path, value_dict):
@@ -88,20 +102,22 @@ def process_row(row, mappings, all_headers):
 
                 if match:
                     idx = int(match.group(1)) - 1
-                    field_name = f"{prefix}{var}"  # preserve original case in key
+
+                    # Use prefix + var if prefix exists, else just var
+                    field_name = f"{prefix}{var}" if prefix else var
+
                     value = convert_value(row_dict.get(col_lc, None), dtype)
                     list_struct[path][idx][field_name] = value
                     list_field_max_index[path] = max(list_field_max_index[path], idx + 1)
                     matched = True
 
             if not matched:
-                # if no matching columns at all, still initialize one item
-                list_struct[path][0][f"{prefix}{var}"] = get_default_value(dtype)
+                fallback_name = f"{prefix}{var}" if prefix else var
+                list_struct[path][0][fallback_name] = get_default_value(dtype)
                 list_field_max_index[path] = max(list_field_max_index[path], 1)
 
         else:
-            # Non-list fields → merge multiple under same path
-            value = None
+            # Non-list fields
             if var_lc in row_dict:
                 value = convert_value(row_dict[var_lc], dtype)
             elif samed_lc and samed_lc in row_dict:
@@ -110,7 +126,7 @@ def process_row(row, mappings, all_headers):
                 value = get_default_value(dtype)
             insert_path_nested(final, path, var, value)
 
-    # Finalize list items
+    # Build final list items
     for path, max_index in list_field_max_index.items():
         items = []
         for i in range(max_index):
@@ -132,9 +148,5 @@ def process_csv_to_json(mapping_file, csv_file, output_file):
         json.dump(result, f, indent=4)
     print(f"✅ Output saved to {output_file}")
 
-# Example Run
-# process_csv_to_json("working mapping.xlsm", "rrf.csv", "output.json")
-
-
-
+# Run your processing function:
 process_csv_to_json("working mapping.xlsx", "rrf.csv", "output.json")
