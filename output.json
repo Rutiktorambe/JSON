@@ -69,7 +69,13 @@
                 ],
                 "tp": [
                     {
-                        "tradenan": ""
+                        "trade": "trade1_row1"
+                    },
+                    {
+                        "trade": "trade2_row1"
+                    },
+                    {
+                        "trade": "trade3_row1"
                     }
                 ]
             }
@@ -143,7 +149,13 @@
                 ],
                 "tp": [
                     {
-                        "tradenan": ""
+                        "trade": "trade1_row2"
+                    },
+                    {
+                        "trade": "trade2_row2"
+                    },
+                    {
+                        "trade": "trade3_row2"
                     }
                 ]
             }
@@ -217,7 +229,13 @@
                 ],
                 "tp": [
                     {
-                        "tradenan": ""
+                        "trade": "trade1_row3"
+                    },
+                    {
+                        "trade": "trade2_row3"
+                    },
+                    {
+                        "trade": "trade3_row3"
                     }
                 ]
             }
