@@ -3,16 +3,16 @@
         {
             "z": {
                 "q": {
-                    "a": "hiitest"
+                    "a": "a_row1"
                 },
                 "p": {
-                    "e": "hiitest1",
-                    "f": "hiitest1",
-                    "g": "hiitest1"
+                    "e": "e_row1",
+                    "f": "f_row1",
+                    "g": "g_row1"
                 },
                 "r": {
                     "x": "x",
-                    "o": "qq",
+                    "o": "0_row1",
                     "a1": "a1",
                     "a2": "a2",
                     "a3": "a3",
@@ -21,55 +21,55 @@
                 },
                 "e": [
                     {
-                        "Pl_inputb": 12.0,
-                        "Pl_inputc": true,
-                        "Pl_inputd": "11/12/1852"
+                        "Pl_inputb": "11",
+                        "Pl_inputc": "True",
+                        "Pl_inputd": "24-07-2025"
                     },
                     {
-                        "Pl_inputb": 2.0,
-                        "Pl_inputc": false,
-                        "Pl_inputd": "11/12/1852"
+                        "Pl_inputb": "11",
+                        "Pl_inputc": "True",
+                        "Pl_inputd": "24-07-2025"
                     },
                     {
-                        "Pl_inputb": 2.0,
-                        "Pl_inputc": false,
-                        "Pl_inputd": "11/12/1852"
+                        "Pl_inputb": "11",
+                        "Pl_inputc": "True",
+                        "Pl_inputd": "24-07-2025"
                     },
                     {
-                        "Pl_inputb": 99.0,
-                        "Pl_inputc": false,
+                        "Pl_inputb": "Pl_input4_b_row1",
+                        "Pl_inputc": "c",
                         "Pl_inputd": "11/12/1852"
                     }
                 ],
                 "t": [
                     {
-                        "Tradeh": "hiitest1",
-                        "hotMaili": "hiitest1"
+                        "Tradeh": "Trade1h_row1",
+                        "hotMaili": "hotMail1i_row1"
                     },
                     {
-                        "Tradeh": "hiitest1",
-                        "hotMaili": "hiitest1"
+                        "Tradeh": "Trade2h_row1",
+                        "hotMaili": "hotMail2i_row1"
                     },
                     {
-                        "Tradeh": "hiitest1",
-                        "hotMaili": "hiitest1"
+                        "Tradeh": "Trade3h_row1",
+                        "hotMaili": "hotMail3i_row1"
                     }
                 ],
                 "op": [
                     {
-                        "qeq": "w",
-                        "te": "12",
-                        "rx": "rx"
+                        "te": "te_row1",
+                        "rx": "rx",
+                        "qeq": "eq"
                     },
                     {
-                        "qeq": "w",
+                        "qeq": "q2eq_row1",
                         "te": "te",
                         "rx": "rx"
-                    },
+                    }
+                ],
+                "tp": [
                     {
-                        "qeq": "w",
-                        "te": "te",
-                        "rx": "rx"
+                        "tradenan": ""
                     }
                 ]
             }
@@ -77,16 +77,16 @@
         {
             "z": {
                 "q": {
-                    "a": "hiitest"
+                    "a": "a_row2"
                 },
                 "p": {
-                    "e": "hiitest2",
-                    "f": "hiitest2",
-                    "g": "hiitest2"
+                    "e": "e_row2",
+                    "f": "f_row2",
+                    "g": "g_row2"
                 },
                 "r": {
                     "x": "x",
-                    "o": "qq",
+                    "o": "0_row2",
                     "a1": "a1",
                     "a2": "a2",
                     "a3": "a3",
@@ -95,55 +95,55 @@
                 },
                 "e": [
                     {
-                        "Pl_inputb": 12.0,
-                        "Pl_inputc": false,
+                        "Pl_inputb": "12",
+                        "Pl_inputc": "False",
                         "Pl_inputd": "25-07-2025"
                     },
                     {
-                        "Pl_inputb": 0,
-                        "Pl_inputc": false,
-                        "Pl_inputd": "hiitest2"
+                        "Pl_inputb": "12",
+                        "Pl_inputc": "False",
+                        "Pl_inputd": "25-07-2025"
                     },
                     {
-                        "Pl_inputb": 0,
-                        "Pl_inputc": false,
-                        "Pl_inputd": "hiitest2"
+                        "Pl_inputb": "12",
+                        "Pl_inputc": "False",
+                        "Pl_inputd": "25-07-2025"
                     },
                     {
-                        "Pl_inputb": 919.0,
-                        "Pl_inputc": false,
+                        "Pl_inputb": "Pl_input4_b_row2",
+                        "Pl_inputc": "c",
                         "Pl_inputd": "11/12/1852"
                     }
                 ],
                 "t": [
                     {
-                        "Tradeh": "hiitest2",
-                        "hotMaili": "hiitest2"
+                        "Tradeh": "Trade1h_row2",
+                        "hotMaili": "hotMail1i_row2"
                     },
                     {
-                        "Tradeh": "hiitest2",
-                        "hotMaili": "hiitest2"
+                        "Tradeh": "Trade2h_row2",
+                        "hotMaili": "hotMail2i_row2"
                     },
                     {
-                        "Tradeh": "hiitest2",
-                        "hotMaili": "hiitest2"
+                        "Tradeh": "Trade3h_row2",
+                        "hotMaili": "hotMail3i_row2"
                     }
                 ],
                 "op": [
                     {
-                        "qeq": "w",
-                        "te": "12",
-                        "rx": "rx"
+                        "te": "te_row2",
+                        "rx": "rx",
+                        "qeq": "eq"
                     },
                     {
-                        "qeq": "w",
+                        "qeq": "q2eq_row2",
                         "te": "te",
                         "rx": "rx"
-                    },
+                    }
+                ],
+                "tp": [
                     {
-                        "qeq": "w",
-                        "te": "te",
-                        "rx": "rx"
+                        "tradenan": ""
                     }
                 ]
             }
@@ -151,16 +151,16 @@
         {
             "z": {
                 "q": {
-                    "a": "hiitest"
+                    "a": "a_row3"
                 },
                 "p": {
-                    "e": "hiitest3",
-                    "f": "hiitest3",
-                    "g": "hiitest3"
+                    "e": "e_row3",
+                    "f": "f_row3",
+                    "g": "g_row3"
                 },
                 "r": {
                     "x": "x",
-                    "o": "qq",
+                    "o": "0_row3",
                     "a1": "a1",
                     "a2": "a2",
                     "a3": "a3",
@@ -169,55 +169,55 @@
                 },
                 "e": [
                     {
-                        "Pl_inputb": 12.0,
-                        "Pl_inputc": true,
+                        "Pl_inputb": "13",
+                        "Pl_inputc": "True",
                         "Pl_inputd": "26-07-2025"
                     },
                     {
-                        "Pl_inputb": 0,
-                        "Pl_inputc": false,
-                        "Pl_inputd": "hiitest3"
+                        "Pl_inputb": "13",
+                        "Pl_inputc": "True",
+                        "Pl_inputd": "26-07-2025"
                     },
                     {
-                        "Pl_inputb": 0,
-                        "Pl_inputc": false,
-                        "Pl_inputd": "hiitest3"
+                        "Pl_inputb": "13",
+                        "Pl_inputc": "True",
+                        "Pl_inputd": "26-07-2025"
                     },
                     {
-                        "Pl_inputb": 0,
-                        "Pl_inputc": false,
+                        "Pl_inputb": "Pl_input4_b_row3",
+                        "Pl_inputc": "c",
                         "Pl_inputd": "11/12/1852"
                     }
                 ],
                 "t": [
                     {
-                        "Tradeh": "hiitest3",
-                        "hotMaili": "hiitest3"
+                        "Tradeh": "Trade1h_row3",
+                        "hotMaili": "hotMail1i_row3"
                     },
                     {
-                        "Tradeh": "hiitest3",
-                        "hotMaili": "hiitest3"
+                        "Tradeh": "Trade2h_row3",
+                        "hotMaili": "hotMail2i_row3"
                     },
                     {
-                        "Tradeh": "hiitest3",
-                        "hotMaili": "hiitest3"
+                        "Tradeh": "Trade3h_row3",
+                        "hotMaili": "hotMail3i_row3"
                     }
                 ],
                 "op": [
                     {
-                        "qeq": "w",
-                        "te": "12",
-                        "rx": "rx"
+                        "te": "te_row3",
+                        "rx": "rx",
+                        "qeq": "eq"
                     },
                     {
-                        "qeq": "w",
+                        "qeq": "q2eq_row3",
                         "te": "te",
                         "rx": "rx"
-                    },
+                    }
+                ],
+                "tp": [
                     {
-                        "qeq": "w",
-                        "te": "te",
-                        "rx": "rx"
+                        "tradenan": ""
                     }
                 ]
             }
