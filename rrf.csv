@@ -1,4 +1,4 @@
-a,Pl_input1_b,Pl_input1_c,Pl_input1_d,Pl_input2_b,Pl_input2_c,Pl_input2_d,Pl_input3_b,Pl_input3_c,Pl_input3_d,e,f,g,Trade1h,hotMail1i,Trade2h,hotMail2i,Trade3h,hotMail3i,r,q1eq,q2eq,q3eq,te,Pl_input4_b
-hiitest,12,TRUE,,,,,,,,hiitest1,hiitest1,hiitest1,hiitest1,hiitest1,hiitest1,hiitest1,hiitest1,hiitest1,qq,w,w,w,12,99
-hiitest,12,FALSE,25-07-2025,hiitest2,hiitest2,hiitest2,hiitest2,hiitest2,hiitest2,hiitest2,hiitest2,hiitest2,hiitest2,hiitest2,hiitest2,hiitest2,hiitest2,hiitest2,qq,w,w,w,12,919
-hiitest,12,TRUE,26-07-2025,hiitest3,hiitest3,hiitest3,hiitest3,hiitest3,hiitest3,hiitest3,hiitest3,hiitest3,hiitest3,hiitest3,hiitest3,hiitest3,hiitest3,hiitest3,qq,w,w,w,12,temp
+a,Pl_input1_b,Pl_input1_c,Pl_input1_d,Pl_input2_b,Pl_input2_c,Pl_input2_d,Pl_input3_b,Pl_input3_c,Pl_input3_d,e,f,g,Trade1h,hotMail1i,Trade2h,hotMail2i,Trade3h,hotMail3i,r,0,q2eq,q3eq,te,Pl_input4_b,trade1,trade2,trade3
+hiitest,12,TRUE,,,,,,,,hiitest1,hiitest1,hiitest1,hiitest1,hiitest1,hiitest1,hiitest1,hiitest1,hiitest1,qq,w,w,w,12,99,qw,er,tg
+hiitest,12,FALSE,25-07-2025,hiitest2,hiitest2,hiitest2,hiitest2,hiitest2,hiitest2,hiitest2,hiitest2,hiitest2,hiitest2,hiitest2,hiitest2,hiitest2,hiitest2,hiitest2,qq,w,w,w,12,919,22,11,55
+hiitest,12,TRUE,26-07-2025,hiitest3,hiitest3,hiitest3,hiitest3,hiitest3,hiitest3,hiitest3,hiitest3,hiitest3,hiitest3,hiitest3,hiitest3,hiitest3,hiitest3,hiitest3,qq,w,w,w,12,temp,,22,48
