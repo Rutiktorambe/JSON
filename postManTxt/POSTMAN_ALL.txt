@@ -1,0 +1,836 @@
+Postman KickStart
+------------------
+Introduction to Postman
+-----------------------
+API Testing Tool
+Manual Testing of API's
+Javascript basics is required
+Developers uses postman to create API Documentation
+Rest API and SOAP API's
+web + Desktop versions
+
+
+Workspace
+---------
+Collaborative environment --> organize and manage api's
+Create, rename, delete
+
+
+Collection
+-----------
+group of related API request togethor
+Create, rename, delete and run collection
+Multiple collections can be created under one single workspace
+Once we create a collection we can create a request.
+
+
+
+Request
+-------
+API Call --> method+endpoint+headers+body
+Request --> API --> Resposne
+
+Get   →  retrieve the resource from database
+Post  →  create resource on database
+Put  →  update existing resource on database
+Patch  → update partial details of resource
+Delete  →  delete existing resource from database
+
+
+status code, time, size data, response body (json/xml), cookies, headers.
+
+status code --> we can say a request is successfull or not
+
+
+Workspace --> collection --> API Request
+
+
+HTTP/HTTPS --> Schema+Hostname+Post+path+Query String or Parameters+Fragment
+
+
+
+Scheme: Specifies the protocol (e.g., https or http).
+Hostname: Identifies the server (e.g., www.example.com).
+Port: Optional; follows the hostname with a colon (e.g., :80).
+Path: Points to the specific resource (e.g., /software/index.html).
+Query String or Query Params: Optional; starts with ? and contains parameters (e.g., term=bluebird).
+
+A fragment identifier which is optional, added after `#` in a URL, points to a specific section or function within the retrieved resource, like a subsection in an HTML page, and its behavior depends on the media type.
+
+Schema and Hostname --> Case Insenitive
+
+Path + Query strings --> Case - sensitive
+
+
+Swagger Documentation  --> Birth Certicate
+
+
+
+https://reqres.in/   +   /api/users?page=2
+
+
+https://reqres.in/api/users?page=2
+
+
+Changes in Postman by default are unsaved.. we need to save every time
+
+Autosave
+--------
+settings --> General section --> enable AutoSave
+
+
+
+
+
+
+
+Creation of  Dummy APIs, JSON & JSONPath
+-----------------------------------------
+Dummy APIs --> our own API's
+
+NodeJs
+npm
+json-server
+
+
+C:\Program Files\nodejs\
+
+{
+    "name": "Scott",
+    "location": "France",
+    "phone": "123456",
+    "courses": [
+        "C",
+        "C++"
+    ]
+}
+
+
+
+
+
+{
+    "name": "Scott",
+    "location": "Germany",
+    "phone": "654321",
+    "courses": [
+        "C#",
+        "C++"
+    ]
+
+}
+
+
+JSON --> Javascript object Notation
+
+
+None --> null
+
+
+Python --> List --> Array --> JSON
+
+[1,2,3,4]
+
+JSON --> JSON PATH
+
+
+XML --> XPATH
+
+
+Validations
+-------------
+
+Actual data == Expected data   --> TC passes
+
+
+
+
+Xpath --> /   --> . --> JSONPATH
+
+
+
+{
+  "store": {
+    "book": [
+      {
+        "title": "Java Programming",
+        "author": "John Doe",
+        "price": 29.99,
+        "categories": ["Programming", "Java"]
+      },
+      {
+        "title": "Python Basics",
+        "author": "Jane Smith",
+        "price": 19.99,
+        "categories": ["Programming", "Python"]
+      }
+    ],
+    "bicycle": {
+      "type": "Mountain",
+      "price": 499.99
+    }
+  }
+}
+
+$.store.book[0].title
+$.store.book[1]
+$.store.bicycle.type
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{
+  "store": {
+    "book": [
+      {
+        "title": "Java Programming",
+        "author": "John Doe",
+        "price": 29.99,
+        "categories": ["Programming", "Java"]
+      },
+      {
+        "title": "Python Basics",
+        "author": "Jane Smith",
+        "price": 19.99,
+        "categories": ["Programming", "Python"]
+      }
+    ],
+    "bicycle": {
+      "type": "Mountain",
+      "price": 499.99
+    }
+  }
+}
+store.book[0].categories
+
+
+
+
+
+Response Validations(Assertions)
+--------------------------------
+Create Dummy API's
+JSON
+JSON Path
+	dot notation
+	brackets
+
+Assertions --> Validation Points
+
+Request --> API --> Response
+
+Java --> TestNg --> TestNG Assertions
+Python --> PyTest --> Assesrtions
+
+Postman --> Chailibrary  --> JS/TS
+
+Response information
+----------------------
+status code
+	Indicates the result of the API request. It helps identify the outcome of the request.
+
+Headers
+	Provide additional metadata in the form key-value pairs about the response, such as the type of data 	returned (e.g., JSON), server details, caching rules, or security policies.
+
+
+Cookies
+	Small pieces of data sent by the server to the client, often used to maintain sessions, track user 	activity, or store user preferences. Cookies are not found when running the API locally; they are only 	visible when accessed through the internet.
+
+Response Time
+Response body
+JSON Schema --> data about data --> metadata
+
+Get   -> details
+Post
+Put
+Patch
+Delete
+
+
+Postman --> validations --> scripts tab --> Post Response
+
+Status of validations --> Test Results
+
+
+
+
+
+
+
+Variables in Postman
+--------------------
+Variable
+--------
+container or placeholder to store some data  --> urls, requests, scripts, collecftions
+
+avoid hard coding of values
+to make reusable scripts
+to manage configurations --> QA, UAT, Prod
+
+Types and Scope of Variables
+----------------------------
+Environments --> (workspace --> group of collections --> group of requests)
+
+Global variable  --> varibale created at workspace level --> accessible in workspace
+Environmental variable  --> specific to environment
+Collection Variable --> specific to collection of requests
+Local Variable  --> specific to request
+
+
+Data Variable or External Variable  --> Data Driven Testing
+
+
+varaiable with same --> local variable , Global varaible
+
+
+If a variable with the same name is declared in two different scopes, the value stored in the variable with narrowest scope will be used.
+ For example, if there is a global variable named username and a local variable named username, the local value will be used when the request runs.
+
+
+Access Variables
+---------------
+Any variable --> {{variable_name}}
+
+https://reqres.in/api/users?page=2
+
+Base_Url  = https://reqres.in
+path = /api/users
+Query = page=2 
+
+Global Variable
+--------------
+workspace level
+
+Python --> default arguments
+
+Environmental variable
+---------------------
+create any env variable --> first we need to create environment
+
+Collection variable
+--------------------
+collection level
+
+
+Local Variable
+-------------
+we cannot create through UI
+Request Level
+Pre-Request Script  --> Javascript statement
+
+
+
+In Real time we will create any type of variable using JavaScript Statements using snippets instead of using UI options.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Scripts in Postman
+=================
+Variables in Postman  --> Pre-request script Tab
+
+postman scripts
+-------------------
+different stages
+
+pre-request script
+	Runs before request is sent
+	create variables before sending a request
+
+
+
+post-response script
+	script that runs after recieveing the response
+	create response validations after recieving the response
+	Delete variables after recieveing responses
+
+Workflow of scripts
+-------------------
+Pre-request script --> Request --> API --> Resposne --> Post response script
+
+Levels of script
+----------------
+
+workspace
+	collection
+		folder
+		    Requests
+collection
+	folder
+	     Requests
+
+collection --> group of requests
+folder --> subgroups in a collection
+Request --> individual HTTP Request
+
+python --> print() --> displays information in console
+Javascript --> console.log() --> displays information in console
+
+
+A pre-request script associated with a collection will run prior to every request in the collection.
+A pre-request script associated with a folder will run prior to every direct child request in the folder.
+
+A post-response script associated with a collection will run after every request in the collection.
+A post-response script associated with a folder will run after every direct child request in the folder.
+
+
+To create variables instead of postman UI we will use JAVASCRIPT STATEMENTS
+
+Global Variable  → pm.globals.set("userid_global", "2");
+Environment Variable  → pm.environment.set("userid_qa_env", "2");
+Collection Variable  →  pm.collectionVariables.set("userid_collect", "2");
+Local Variable  →  pm.variables.set("userid_local", "2");
+
+
+Using Variables in Request Body
+--------------------------------
+POST --> Create a user
+
+
+
+
+
+
+
+
+
+
+
+
+
+API Chaining
+-------------
+Prerequest script --> request --> response --> PostResposne Script
+
+API Chaining --> executing multiple requests in order where response or part of response of one request is used as an input to another requests
+
+Dependency between requests
+
+we will store response or part of response in a variable
+
+
+https://gorest.co.in/ --> Demonstration of API Chaining  --> Rest API + GraphQL  --> Bearer Token Authentication
+
+
+b1602b1675864f0184bf8d5f875ddd5821ae338eb11f7f155033bf9aa029159f
+
+d313b254812a63c491e54e8264200731ef2df8943bd9a5f90318b983cb50f2d1
+
+
+Request UL --> Base URL + endpoint + Query Parameters
+
+Base URL is common across all requests   --> https://gorest.co.in/
+
+Collection --> multiple requests
+
+
+{
+    "name": "Mohan",
+    "gender": "male",
+    "email": "mohan@gmail.com",
+    "status": "inactive"
+
+}
+
+
+
+[
+    {
+        "field": "email",
+        "message": "has already been taken"
+    }
+]
+
+
+In Request(s) we should not hard code any data
+
+
+{
+    "name": {{"username"}},
+    "gender": "male",
+    "email": {{"useremail"}},
+    "status": "inactive"
+
+}
+
+
+{
+    "id": 7886989,
+    "name": "Deepa",
+    "email": "Deepa@gmail.com",
+    "gender": "male",
+    "status": "inactive"
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Customize Collection Run Order and Data Driven Testing
+-------------------------------------------------------
+API Chaining
+
+Postman executes requests in order
+In older versions of Postman --> Alphbetical Order
+
+API Collection --> Simple-Books-API
+
+pm.execution.setNextRequest()  --> Post Response Script Tab
+
+
+Data Driven Testing
+-------------------
+Data-driven testing in Postman runs requests multiple times with different data from a CSV or JSON file to test various scenarios. Data-driven testing is done by using Data variables.
+
+
+Local
+Environmental
+Global
+Collection
+
+Data Variables  --> Data Driven Testing
+Data Variables names must match with names of columns in Test Data file
+
+
+File Upload and Download in Postman
+-----------------------------------
+
+Customize collection run Order
+Data Driven Testing using CSV or JSON file
+
+
+When we upload a file (single or multiple) through a web UI, an API is triggered in the background.
+
+This API receives the file from the client and sends the request to the server. Then, the uploaded files are stored on the server or in the database.
+
+
+https://github.com/Madhan-091296/spring-boot-file-upload-download-rest-api-master
+
+
+To run java archive we need java
+
+https://www.oracle.com/java/technologies/downloads/#jdk24-mac
+
+Check java --> Java -version
+
+Open the commnd prompt where the file present and execute below command
+	java -jar file-upload-RestAPI.jar
+
+http://localhost:8080/
+
+
+
+
+Every file type has a specific MIME type. MIME type (Multipurpose Internet Mail Extensions) tells the browser or server what kind of file is being sent.
+
+
+
+
+
+
+
+201 Created means the server created a new resource (like a new file or record) as a result of your POST request.
+
+200 OK means the request was successful, but the server might not have created anything new — maybe it just accepted or processed your data.
+
+In file uploads, some servers respond with 200 if they just received and processed the file without creating a new resource with a unique URL. Others use 201 if they treat the upload as creating a new resource you can access later.
+
+So both can be correct — it depends on how the server handles the upload!
+
+
+
+
+
+
+
+
+
+Authentication and Authorization Types in Postman - 1
+-----------------------------------------------------
+File Upload and File Download
+
+Authentication --> verify identify of user
+Authorization  --> Determine what actions or data can perform by user once he is authnticated
+
+Authentications in Postman
+--------------------------
+Request --> Authorization Tab --> Auth Type --> List of Authorizations
+
+encoded 
+encrypted
+
+https://api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}
+
+85942c135789df1d1db0111716cce5
+
+Bearer Token --> ghp_ORYpyuecABbVBN7PnsUuJvmjgYx2v1KmO1F
+
+eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJkb29kbGUiLCJmcnVpdCI6Im1hbmdvIn0.4WyPnMOWX7Fl2Y8O7dqiHW3gXWBK-g94RxSF7Rf4GbM
+
+
+
+
+
+
+
+
+
+Authentication and Authorization Types in Postman - 2
+-----------------------------------------------------
+No Auth
+Basic Auth
+Digest Auth
+Bearer Token
+JWT Token
+API Key
+
+
+OAuth --> Open Authorization
+
+Rapido(client)   --> Google Map (Service Provider)
+
+OAuth (Open Authorization) is a secure way to allow one app to access specific information from another app without sharing your credentials — giving limited, controlled access to only what you approve.
+
+
+OAuth 1.0
+
+	Temporary Request Token
+	Approved Request Token
+	Access Token
+
+
+
+
+OAuth 2.0
+
+
+https://open.spotify.com/artist/1SJOL9HJ08YOn92lFcYf8a?si=m-H2XRk7RYmEBtj5OeDgEw
+
+Redirect URIs → URIs where users can be redirected after authentication success or failure
+
+Client id --> 8d20043bc76d420987e4959b3b1f55d3
+Client Secret --> 4ee22d9c8ca844a8a6373bf584b1956f
+
+BQD92JUfyqOmWc93JKJF1w0IqH16_xx0crL4M_-OFpuPIfH6-2TOBTw5geYVBsuWQbpGkXOG0hrVtPd4UEZXqIVNAZYsVpUQSeC7qgAN5el-kvZH2EyYYUkx0STRSg6wyRWUQt7a6Mo
+
+https://open.spotify.com/artist/2NoJ7NuNs9nyj8Thoh1kbu?si=2oT0RNLMRfaPykCtlzBxMA
+
+
+OnlineStoreAPI - Project
+-------------------------
+
+
+workspace --> Collection --> group of requests belongs to specific module
+
+An endpoint (or resource path) is a specific URL that represents a resource on the server. It defines the address where a client can access or manipulate data using HTTP methods like GET, POST, PUT, PATCH, and DELETE.
+
+A Data Model in API Testing defines the structure, relationships, and format of the data that the API accepts and returns. Purpose of Data Model is Ensures data consistency, Simplifies data validation, Helps define API request and response formats.
+
+
+We create test cases based on the high-level technical document, but it doesn’t provide all the details. During test case writing, we have meetings with developers and product managers to clarify questions and add more information to the test cases as part of the process.
+
+Test Cases --> TCM Tools
+
+TestRail
+JIRA (with Zephyr plugin)
+Quality Center (ALM)
+Xray (for JIRA)
+qTest
+TestLink
+Azure DevOps (with Test Plans)
+
+
+We should not hardcode any data in the request. we always take the data from the variables. Most of the times variable values are taken from external files.
+
+every Module --> Collection  --> variable
+
+
+Ground Work
+
+
+JSON File  --> One round of Testing
+CSV File  -->  Data Driven Testing
+
+
+At the end of the day we will execute collection in remote agent machine(cloud/on-premise server)
+
+
+Local machine(Outside of postman) --> make sure --> agent machine
+
+When we run a collection inside Postman, global variables are used automatically.
+
+But when we export the collection to run outside Postman like in Command Prompt, Jenkins, or GitHub, only the collection along with collection variables is exported not the global variables.
+
+So, if our collection depends on global variables we must also export the global variables separately as an environment or global variable JSON file.
+
+
+Postman does not provide a built-in detailed report.To generate a proper report automatically, you need to run the collection using Newman (Postman’s command-line tool).
+
+
+
+
+
+
+Newman CLI,  Git and Jenkins
+----------------------------
+Run a collection --> project --> Collection Runner --> No reporting supporting is avaliable in postman
+
+Newman CLI
+
+Newman allows us to run Postman collections from the command line and generate different types of test reports, such as CLI, JSON, HTML, or JUnit.
+
+It also enables seamless integration of Postman API tests into CI/CD pipelines like Jenkins, GitLab CI, Azure DevOps, etc., making it suitable for automated testing workflows.
+
+https://nodejs.org/en/download
+
+Node.js --> npm
+
+python --> pip
+
+
+npm install -g newman
+npm install -g newman-reporter-htmlextra
+newman run Products.postman_collection.json -d product_data.json -g workspace.postman_globals.json
+newman run Products.postman_collection.json -d product_data.json -g workspace.postman_globals.json -r htmlextra
+
+. --> CWD or PWD
+
+newman run Products.postman_collection.json -d product_data.json -g workspace.postman_globals.json -r htmlextra --reporter-htmlextra-export ./results/report.html --reporter-htmlextra-browserTitle "Store API Test Report" --reporter-htmlextra-title "Store API Test Summary"
+
+
+Agent Machine --> Cloud/on premise
+
+Local Machine   --> Reomte repository(GitHub)  --> Jenkins Pipeline  --> Agent Machine
+
+Git --> Global Information Tracker --> VCS
+
+
+
+Git init --> .git --> hidden folder
+
+
+https://www.youtube.com/watch?v=1LEDY1S8FSc&list=PLUDwpEzHYYLuMNNTu0EdWBeBtXdRhj4Lv&index=5
+
+
+
+https://github.com/Madhan-091296/OnlineStoreAPI.git
+
+
+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
+
+Master Branch --> clean code 
+
+git status
+git add filename
+git commit -m "message"
+git push origin branch name
+
+
+standlone steup --> single machine will be acting as master and slave
+
+Distributed setup
+	Master --> slave
+
+Java installation --> https://www.oracle.com/java/technologies/downloads/ --> java --version
+
+Jenkins --> Java 17 or newer versions of java
+
+
+java -jar jenkins.war --enable-future-java
+
+http://localhost:8080/
+
+http://192.168.0.100:8080/
+
+ipconfig
+
+PostmanCLI
+-----------
+Newman CLI
+GitHub
+Jenkins
+
+Newman Cli--> json, junit, cli, html, html-reporter-extra
+
+Postman Cli--> cli, html, json
+
+postman login --with-api-key PMAK-682fd33aead8ab000181973a-7b6a085a57d6534033684d6110a447126c
+
+postman collection run 23191639-1a8b68c8-addf-4d22-bab7-711436acd3cc
+
+postman collection run 23191639-1a8b68c8-addf-4d22-bab7-711436acd3cc -d product_data.json -g workspace.postman_globals.json -r html
+
+Locally --> executing
+
+Jenkins Pipeline
+
+pipeline {
+  agent any
+
+  tools {nodejs "{your_nodejs_configured_tool_name}"}
+
+  stages {
+    stage('Install Postman CLI') {
+      steps {
+        sh 'powershell.exe -NoProfile -InputFormat None -ExecutionPolicy AllSigned -Command "[System.Net.ServicePointManager]::SecurityProtocol = 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://dl-cli.pstmn.io/install/win64.ps1'))"'
+      }
+    }
+
+    stage('Postman CLI Login') {
+      steps {
+        sh 'postman login --with-api-key $POSTMAN_API_KEY'
+      }
+    }
+
+    stage('Running collection') {
+      steps {
+        sh 'postman collection run "23191639-1a8b68c8-addf-4d22-bab7-711436acd3cc"'
+      }
+    }
+  }
+}
+
+
+C:\Program Files\nodejs
+
+
+C:\\Postman\\OnlineStoreAPI Project\\product_data.json
+
+
+C:\\Postman\\OnlineStoreAPI Project\\workspace.postman_globals.json
+
+
+
+
+

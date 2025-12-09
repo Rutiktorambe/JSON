@@ -1,0 +1,37 @@
+Documentation, Swagger & cURL
+-----------------------------
+Phases in API Automation
+------------------------
+1. Understanding Requirements and Design of API's
+2. Creates Test Cases (Technical design & Swagger or OpenAPI documentation)
+3. Created Workspace and Collection in Postman
+4. Added requests with validations, variables and scripts
+5. Execution
+	Postman collection Runner
+	Newman CLI
+	Postman CLI
+6. Documentation
+
+Documentation
+---------------
+built in feature in postman
+	Generate API Documentation
+	Share and Publish with the Team
+	Create a Run in Postman
+postman Automatically cretes Documentation with details in the request
+
+
+https://mmr091296.postman.co/workspace/OnlineStoreAPI~267ba1e8-9aa9-4e6d-b9f6-54fc8e106852/collection/23191639-1a8b68c8-addf-4d22-bab7-711436acd3cc?action=share&creator=23191639
+
+https://documenter.getpostman.com/view/23191639/2sB2qdfKKi
+
+Technical Design Document --> Static Document
+Postman Documentation --> Static Document
+
+
+Swagger --> Interactive Document
+
+curl -X GET "https://fakerestapi.azurewebsites.net/api/v1/Books" -H  "accept: text/plain; v=1.0" 
+
+
+

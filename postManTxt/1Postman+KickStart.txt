@@ -1,0 +1,86 @@
+Postman KickStart
+------------------
+Introduction to Postman
+-----------------------
+API Testing Tool
+Manual Testing of API's
+Javascript basics is required
+Developers uses postman to create API Documentation
+Rest API and SOAP API's
+web + Desktop versions
+
+
+Workspace
+---------
+Collaborative environment --> organize and manage api's
+Create, rename, delete
+
+
+Collection
+-----------
+group of related API request togethor
+Create, rename, delete and run collection
+Multiple collections can be created under one single workspace
+Once we create a collection we can create a request.
+
+
+
+Request
+-------
+API Call --> method+endpoint+headers+body
+Request --> API --> Resposne
+
+Get   →  retrieve the resource from database
+Post  →  create resource on database
+Put  →  update existing resource on database
+Patch  → update partial details of resource
+Delete  →  delete existing resource from database
+
+
+status code, time, size data, response body (json/xml), cookies, headers.
+
+status code --> we can say a request is successfull or not
+
+
+Workspace --> collection --> API Request
+
+
+HTTP/HTTPS --> Schema+Hostname+Post+path+Query String or Parameters+Fragment
+
+
+
+Scheme: Specifies the protocol (e.g., https or http).
+Hostname: Identifies the server (e.g., www.example.com).
+Port: Optional; follows the hostname with a colon (e.g., :80).
+Path: Points to the specific resource (e.g., /software/index.html).
+Query String or Query Params: Optional; starts with ? and contains parameters (e.g., term=bluebird).
+
+A fragment identifier which is optional, added after `#` in a URL, points to a specific section or function within the retrieved resource, like a subsection in an HTML page, and its behavior depends on the media type.
+
+Schema and Hostname --> Case Insenitive
+
+Path + Query strings --> Case - sensitive
+
+
+Swagger Documentation  --> Birth Certicate
+
+
+
+https://reqres.in/   +   /api/users?page=2
+
+
+https://reqres.in/api/users?page=2
+
+
+Changes in Postman by default are unsaved.. we need to save every time
+
+Autosave
+--------
+settings --> General section --> enable AutoSave
+
+
+
+
+
+
+

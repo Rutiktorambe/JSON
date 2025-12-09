@@ -1,0 +1,76 @@
+Newman CLI,  Git and Jenkins
+----------------------------
+Run a collection --> project --> Collection Runner --> No reporting supporting is avaliable in postman
+
+Newman CLI
+
+Newman allows us to run Postman collections from the command line and generate different types of test reports, such as CLI, JSON, HTML, or JUnit.
+
+It also enables seamless integration of Postman API tests into CI/CD pipelines like Jenkins, GitLab CI, Azure DevOps, etc., making it suitable for automated testing workflows.
+
+https://nodejs.org/en/download
+
+Node.js --> npm
+
+python --> pip
+
+
+npm install -g newman
+npm install -g newman-reporter-htmlextra
+newman run Products.postman_collection.json -d product_data.json -g workspace.postman_globals.json
+newman run Products.postman_collection.json -d product_data.json -g workspace.postman_globals.json -r htmlextra
+
+. --> CWD or PWD
+
+newman run Products.postman_collection.json -d product_data.json -g workspace.postman_globals.json -r htmlextra --reporter-htmlextra-export ./results/report.html --reporter-htmlextra-browserTitle "Store API Test Report" --reporter-htmlextra-title "Store API Test Summary"
+
+
+Agent Machine --> Cloud/on premise
+
+Local Machine   --> Reomte repository(GitHub)  --> Jenkins Pipeline  --> Agent Machine
+
+Git --> Global Information Tracker --> VCS
+
+
+
+Git init --> .git --> hidden folder
+
+
+https://www.youtube.com/watch?v=1LEDY1S8FSc&list=PLUDwpEzHYYLuMNNTu0EdWBeBtXdRhj4Lv&index=5
+
+
+
+https://github.com/Madhan-091296/OnlineStoreAPI.git
+
+
+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
+
+Master Branch --> clean code 
+
+git status
+git add filename
+git commit -m "message"
+git push origin branch name
+
+
+standlone steup --> single machine will be acting as master and slave
+
+Distributed setup
+	Master --> slave
+
+Java installation --> https://www.oracle.com/java/technologies/downloads/ --> java --version
+
+Jenkins --> Java 17 or newer versions of java
+
+
+java -jar jenkins.war --enable-future-java
+
+http://localhost:8080/
+
+http://192.168.0.100:8080/
+
+ipconfig
+
+
+
+

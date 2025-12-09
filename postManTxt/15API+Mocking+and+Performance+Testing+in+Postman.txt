@@ -1,0 +1,55 @@
+API Mocking and Performance Testing in Postman
+----------------------------------------------
+Postman Documentation
+Swagger
+cURL
+
+
+Mock Server in Postman
+
+Existing collection
+New collection
+
+Postman generates Base URL when we create a mock server.
+
+Mock server is only for Temporary purpose.Actual data-level validations should be performed on real data from the actual database server, not on mock server data.
+
+So, give less importance to validations done on mock server data, as it is only simulated and may not reflect real-time scenarios.
+
+
+Postman is not a full-fledged performance testing tool like JMeter or Gatling or Load Runner or k6 or Locust.
+But it can simulate basic performance testing scenarios using Postman Runner or scripts with iterations, and integrate with Newman + CLI + external tools.
+
+https://learning.postman.com/docs/tests-and-scripts/test-apis/performance-testing/
+
+https://learning.postman.com/docs/collections/performance-testing/testing-api-performance/
+
+
+
+
+Imagine 100 people ordering pizza
+
+	90 people got their pizza in less than 51 ms (super fast!).
+	95 people got it in less than 56 ms (still pretty fast).
+	99 people got it in less than 269 ms. Only 1 person waited longer than 2,110 ms.
+
+90th/95th/99th percentile?
+---------------------------
+These are performance metrics that show how fast most requests were.
+It tells: "X% of requests were completed in this much time or less."
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

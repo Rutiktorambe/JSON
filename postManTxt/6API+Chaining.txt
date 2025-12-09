@@ -1,0 +1,78 @@
+API Chaining
+-------------
+Prerequest script --> request --> response --> PostResposne Script
+
+API Chaining --> executing multiple requests in order where response or part of response of one request is used as an input to another requests
+
+Dependency between requests
+
+we will store response or part of response in a variable
+
+
+https://gorest.co.in/ --> Demonstration of API Chaining  --> Rest API + GraphQL  --> Bearer Token Authentication
+
+
+b1602b1675864f0184bf8d5f875ddd5821ae338eb11f7f155033bf9aa029159f
+
+d313b254812a63c491e54e8264200731ef2df8943bd9a5f90318b983cb50f2d1
+
+
+Request UL --> Base URL + endpoint + Query Parameters
+
+Base URL is common across all requests   --> https://gorest.co.in/
+
+Collection --> multiple requests
+
+
+{
+    "name": "Mohan",
+    "gender": "male",
+    "email": "mohan@gmail.com",
+    "status": "inactive"
+
+}
+
+
+
+[
+    {
+        "field": "email",
+        "message": "has already been taken"
+    }
+]
+
+
+In Request(s) we should not hard code any data
+
+
+{
+    "name": {{"username"}},
+    "gender": "male",
+    "email": {{"useremail"}},
+    "status": "inactive"
+
+}
+
+
+{
+    "id": 7886989,
+    "name": "Deepa",
+    "email": "Deepa@gmail.com",
+    "gender": "male",
+    "status": "inactive"
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

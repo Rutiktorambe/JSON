@@ -1,0 +1,66 @@
+GraphQL Introduction
+--------------------
+Mocking
+Performance Testing
+
+Rest API Testing --> Get, Post, PUT, PATCH, Delete --> HTTPS protocol
+
+Apart from Rest API we have other Architectures
+
+GraphQL --> Graph Query Langugae
+
+In RestAPI --> Different end points
+
+Unlike REST APIs that use multiple endpoints for different operations, GraphQL uses a single endpoint (graphql). All operations like queries, mutations, and even subscriptions are sent via POST requests with the operation and data defined in the request body.
+
+Facebook --> 2014
+
+GraphQL is designed for developers of web/mobile apps (HTTP clients) to be able to make API calls to fetch exactly the data they need from their backend APIs.
+
+Rest API --> Multiple end poinst + multiple http request methods
+
+GraphQL --> Single endpoint(Graphql) + Post
+
+GraphQL is a way to ask for data from a server, like saying
+	"Hey server, give me this specific information only — nothing more, nothing less!"
+
+GraphQL(Graph Query Language) is a query language for APIs and a runtime for executing those queries with your existing data. It is another alternative to RestAPI.
+
+
+query language for APIs
+
+runtime for executing those queries
+
+	query --> GraphQL Server --> Resolver functions  --> multiple Sources or Databases  --> Response
+
+GraphQL -Client Server flow
+
+
+GraphQL query is not really JSON; it looks like the shape of the JSON you want. So when we make a 'POST' request to send our GraphQL query to the server, it is sent as a "string" by the client.
+
+
+GraphQL vs Rest
+---------------
+No extra Data
+Fewer API Calls
+No waiting for Backend team
+Self Documnetation
+	Every GraphQL API conforms to a "schema" which is the graph data model and what kinds of queries a 	client can make. This allows the community to build lots of cool tools to explore & visualise your API 	or create IDE plugins that autocomplete your GraphQL queries and even do "codegen". We'll understand 	this in more detail later!
+
+GraphQL Core Components
+
+
+Mutation --> Change
+
+Comments --> Descriptions --> Non executables
+
+https://hasura.io/learn/graphql/intro-graphql/graphql-mutations/
+
+
+
+
+
+
+
+
+

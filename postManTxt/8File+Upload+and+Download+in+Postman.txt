@@ -1,0 +1,53 @@
+File Upload and Download in Postman
+-----------------------------------
+
+Customize collection run Order
+Data Driven Testing using CSV or JSON file
+
+
+When we upload a file (single or multiple) through a web UI, an API is triggered in the background.
+
+This API receives the file from the client and sends the request to the server. Then, the uploaded files are stored on the server or in the database.
+
+
+https://github.com/Madhan-091296/spring-boot-file-upload-download-rest-api-master
+
+
+To run java archive we need java
+
+https://www.oracle.com/java/technologies/downloads/#jdk24-mac
+
+Check java --> Java -version
+
+Open the commnd prompt where the file present and execute below command
+	java -jar file-upload-RestAPI.jar
+
+http://localhost:8080/
+
+
+
+
+Every file type has a specific MIME type. MIME type (Multipurpose Internet Mail Extensions) tells the browser or server what kind of file is being sent.
+
+
+
+
+
+
+
+201 Created means the server created a new resource (like a new file or record) as a result of your POST request.
+
+200 OK means the request was successful, but the server might not have created anything new — maybe it just accepted or processed your data.
+
+In file uploads, some servers respond with 200 if they just received and processed the file without creating a new resource with a unique URL. Others use 201 if they treat the upload as creating a new resource you can access later.
+
+So both can be correct — it depends on how the server handles the upload!
+
+
+
+
+
+
+
+
+

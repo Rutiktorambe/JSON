@@ -1,0 +1,78 @@
+Variables in Postman
+--------------------
+Variable
+--------
+container or placeholder to store some data  --> urls, requests, scripts, collecftions
+
+avoid hard coding of values
+to make reusable scripts
+to manage configurations --> QA, UAT, Prod
+
+Types and Scope of Variables
+----------------------------
+Environments --> (workspace --> group of collections --> group of requests)
+
+Global variable  --> varibale created at workspace level --> accessible in workspace
+Environmental variable  --> specific to environment
+Collection Variable --> specific to collection of requests
+Local Variable  --> specific to request
+
+
+Data Variable or External Variable  --> Data Driven Testing
+
+
+varaiable with same --> local variable , Global varaible
+
+
+If a variable with the same name is declared in two different scopes, the value stored in the variable with narrowest scope will be used.
+ For example, if there is a global variable named username and a local variable named username, the local value will be used when the request runs.
+
+
+Access Variables
+---------------
+Any variable --> {{variable_name}}
+
+https://reqres.in/api/users?page=2
+
+Base_Url  = https://reqres.in
+path = /api/users
+Query = page=2 
+
+Global Variable
+--------------
+workspace level
+
+Python --> default arguments
+
+Environmental variable
+---------------------
+create any env variable --> first we need to create environment
+
+Collection variable
+--------------------
+collection level
+
+
+Local Variable
+-------------
+we cannot create through UI
+Request Level
+Pre-Request Script  --> Javascript statement
+
+
+
+In Real time we will create any type of variable using JavaScript Statements using snippets instead of using UI options.
+
+
+
+
+
+
+
+
+
+
+
+
+
+

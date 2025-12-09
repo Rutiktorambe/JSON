@@ -1,0 +1,30 @@
+Authentication and Authorization Types in Postman - 1
+-----------------------------------------------------
+File Upload and File Download
+
+Authentication --> verify identify of user
+Authorization  --> Determine what actions or data can perform by user once he is authnticated
+
+Authentications in Postman
+--------------------------
+Request --> Authorization Tab --> Auth Type --> List of Authorizations
+
+encoded 
+encrypted
+
+https://api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}
+
+85942c135789df1d1db0111716cce5
+
+Bearer Token --> ghp_ORYpyuecABbVBN7PnsUuJvmjgYx2v1KmO1F
+
+eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJkb29kbGUiLCJmcnVpdCI6Im1hbmdvIn0.4WyPnMOWX7Fl2Y8O7dqiHW3gXWBK-g94RxSF7Rf4GbM
+
+
+
+
+
+
+
+
+

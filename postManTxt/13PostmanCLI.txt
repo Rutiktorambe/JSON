@@ -1,0 +1,54 @@
+PostmanCLI
+-----------
+Newman CLI
+GitHub
+Jenkins
+
+Newman Cli--> json, junit, cli, html, html-reporter-extra
+
+Postman Cli--> cli, html, json
+
+postman login --with-api-key PMAK-682fd33aead8ab000181973a-7b6a085a57d6534033684d6110a447126c
+
+postman collection run 23191639-1a8b68c8-addf-4d22-bab7-711436acd3cc
+
+postman collection run 23191639-1a8b68c8-addf-4d22-bab7-711436acd3cc -d product_data.json -g workspace.postman_globals.json -r html
+
+Locally --> executing
+
+Jenkins Pipeline
+
+pipeline {
+  agent any
+
+  tools {nodejs "{your_nodejs_configured_tool_name}"}
+
+  stages {
+    stage('Install Postman CLI') {
+      steps {
+        sh 'powershell.exe -NoProfile -InputFormat None -ExecutionPolicy AllSigned -Command "[System.Net.ServicePointManager]::SecurityProtocol = 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://dl-cli.pstmn.io/install/win64.ps1'))"'
+      }
+    }
+
+    stage('Postman CLI Login') {
+      steps {
+        sh 'postman login --with-api-key $POSTMAN_API_KEY'
+      }
+    }
+
+    stage('Running collection') {
+      steps {
+        sh 'postman collection run "23191639-1a8b68c8-addf-4d22-bab7-711436acd3cc"'
+      }
+    }
+  }
+}
+
+
+C:\Program Files\nodejs
+
+
+C:\\Postman\\OnlineStoreAPI Project\\product_data.json
+
+
+C:\\Postman\\OnlineStoreAPI Project\\workspace.postman_globals.json

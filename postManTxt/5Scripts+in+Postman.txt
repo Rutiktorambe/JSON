@@ -1,0 +1,73 @@
+Scripts in Postman
+=================
+Variables in Postman  --> Pre-request script Tab
+
+postman scripts
+-------------------
+different stages
+
+pre-request script
+	Runs before request is sent
+	create variables before sending a request
+
+
+
+post-response script
+	script that runs after recieveing the response
+	create response validations after recieving the response
+	Delete variables after recieveing responses
+
+Workflow of scripts
+-------------------
+Pre-request script --> Request --> API --> Resposne --> Post response script
+
+Levels of script
+----------------
+
+workspace
+	collection
+		folder
+		    Requests
+collection
+	folder
+	     Requests
+
+collection --> group of requests
+folder --> subgroups in a collection
+Request --> individual HTTP Request
+
+python --> print() --> displays information in console
+Javascript --> console.log() --> displays information in console
+
+
+A pre-request script associated with a collection will run prior to every request in the collection.
+A pre-request script associated with a folder will run prior to every direct child request in the folder.
+
+A post-response script associated with a collection will run after every request in the collection.
+A post-response script associated with a folder will run after every direct child request in the folder.
+
+
+To create variables instead of postman UI we will use JAVASCRIPT STATEMENTS
+
+Global Variable  → pm.globals.set("userid_global", "2");
+Environment Variable  → pm.environment.set("userid_qa_env", "2");
+Collection Variable  →  pm.collectionVariables.set("userid_collect", "2");
+Local Variable  →  pm.variables.set("userid_local", "2");
+
+
+Using Variables in Request Body
+--------------------------------
+POST --> Create a user
+
+
+
+
+
+
+
+
+
+
+
+
+

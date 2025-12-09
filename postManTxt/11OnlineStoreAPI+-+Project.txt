@@ -1,0 +1,55 @@
+OnlineStoreAPI - Project
+-------------------------
+
+
+workspace --> Collection --> group of requests belongs to specific module
+
+An endpoint (or resource path) is a specific URL that represents a resource on the server. It defines the address where a client can access or manipulate data using HTTP methods like GET, POST, PUT, PATCH, and DELETE.
+
+A Data Model in API Testing defines the structure, relationships, and format of the data that the API accepts and returns. Purpose of Data Model is Ensures data consistency, Simplifies data validation, Helps define API request and response formats.
+
+
+We create test cases based on the high-level technical document, but it doesn’t provide all the details. During test case writing, we have meetings with developers and product managers to clarify questions and add more information to the test cases as part of the process.
+
+Test Cases --> TCM Tools
+
+TestRail
+JIRA (with Zephyr plugin)
+Quality Center (ALM)
+Xray (for JIRA)
+qTest
+TestLink
+Azure DevOps (with Test Plans)
+
+
+We should not hardcode any data in the request. we always take the data from the variables. Most of the times variable values are taken from external files.
+
+every Module --> Collection  --> variable
+
+
+Ground Work
+
+
+JSON File  --> One round of Testing
+CSV File  -->  Data Driven Testing
+
+
+At the end of the day we will execute collection in remote agent machine(cloud/on-premise server)
+
+
+Local machine(Outside of postman) --> make sure --> agent machine
+
+When we run a collection inside Postman, global variables are used automatically.
+
+But when we export the collection to run outside Postman like in Command Prompt, Jenkins, or GitHub, only the collection along with collection variables is exported not the global variables.
+
+So, if our collection depends on global variables we must also export the global variables separately as an environment or global variable JSON file.
+
+
+Postman does not provide a built-in detailed report.To generate a proper report automatically, you need to run the collection using Newman (Postman’s command-line tool).
+
+
+
+
+
+

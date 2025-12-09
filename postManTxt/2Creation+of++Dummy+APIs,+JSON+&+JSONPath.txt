@@ -1,0 +1,134 @@
+Creation of  Dummy APIs, JSON & JSONPath
+-----------------------------------------
+Dummy APIs --> our own API's
+
+NodeJs
+npm
+json-server
+
+
+C:\Program Files\nodejs\
+
+{
+    "name": "Scott",
+    "location": "France",
+    "phone": "123456",
+    "courses": [
+        "C",
+        "C++"
+    ]
+}
+
+
+
+
+
+{
+    "name": "Scott",
+    "location": "Germany",
+    "phone": "654321",
+    "courses": [
+        "C#",
+        "C++"
+    ]
+
+}
+
+
+JSON --> Javascript object Notation
+
+
+None --> null
+
+
+Python --> List --> Array --> JSON
+
+[1,2,3,4]
+
+JSON --> JSON PATH
+
+
+XML --> XPATH
+
+
+Validations
+-------------
+
+Actual data == Expected data   --> TC passes
+
+
+
+
+Xpath --> /   --> . --> JSONPATH
+
+
+
+{
+  "store": {
+    "book": [
+      {
+        "title": "Java Programming",
+        "author": "John Doe",
+        "price": 29.99,
+        "categories": ["Programming", "Java"]
+      },
+      {
+        "title": "Python Basics",
+        "author": "Jane Smith",
+        "price": 19.99,
+        "categories": ["Programming", "Python"]
+      }
+    ],
+    "bicycle": {
+      "type": "Mountain",
+      "price": 499.99
+    }
+  }
+}
+
+$.store.book[0].title
+$.store.book[1]
+$.store.bicycle.type
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{
+  "store": {
+    "book": [
+      {
+        "title": "Java Programming",
+        "author": "John Doe",
+        "price": 29.99,
+        "categories": ["Programming", "Java"]
+      },
+      {
+        "title": "Python Basics",
+        "author": "Jane Smith",
+        "price": 19.99,
+        "categories": ["Programming", "Python"]
+      }
+    ],
+    "bicycle": {
+      "type": "Mountain",
+      "price": 499.99
+    }
+  }
+}
+store.book[0].categories
+
+
+
+
+

@@ -1,0 +1,24 @@
+Customize Collection Run Order and Data Driven Testing
+-------------------------------------------------------
+API Chaining
+
+Postman executes requests in order
+In older versions of Postman --> Alphbetical Order
+
+API Collection --> Simple-Books-API
+
+pm.execution.setNextRequest()  --> Post Response Script Tab
+
+
+Data Driven Testing
+-------------------
+Data-driven testing in Postman runs requests multiple times with different data from a CSV or JSON file to test various scenarios. Data-driven testing is done by using Data variables.
+
+
+Local
+Environmental
+Global
+Collection
+
+Data Variables  --> Data Driven Testing
+Data Variables names must match with names of columns in Test Data file

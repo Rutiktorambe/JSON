@@ -1,0 +1,41 @@
+Authentication and Authorization Types in Postman - 2
+-----------------------------------------------------
+No Auth
+Basic Auth
+Digest Auth
+Bearer Token
+JWT Token
+API Key
+
+
+OAuth --> Open Authorization
+
+Rapido(client)   --> Google Map (Service Provider)
+
+OAuth (Open Authorization) is a secure way to allow one app to access specific information from another app without sharing your credentials — giving limited, controlled access to only what you approve.
+
+
+OAuth 1.0
+
+	Temporary Request Token
+	Approved Request Token
+	Access Token
+
+
+
+
+OAuth 2.0
+
+
+https://open.spotify.com/artist/1SJOL9HJ08YOn92lFcYf8a?si=m-H2XRk7RYmEBtj5OeDgEw
+
+Redirect URIs → URIs where users can be redirected after authentication success or failure
+
+Client id --> 8d20043bc76d420987e4959b3b1f55d3
+Client Secret --> 4ee22d9c8ca844a8a6373bf584b1956f
+
+BQD92JUfyqOmWc93JKJF1w0IqH16_xx0crL4M_-OFpuPIfH6-2TOBTw5geYVBsuWQbpGkXOG0hrVtPd4UEZXqIVNAZYsVpUQSeC7qgAN5el-kvZH2EyYYUkx0STRSg6wyRWUQt7a6Mo
+
+https://open.spotify.com/artist/2NoJ7NuNs9nyj8Thoh1kbu?si=2oT0RNLMRfaPykCtlzBxMA
+
+

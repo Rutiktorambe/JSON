@@ -1,0 +1,81 @@
+GraphQL Queries, Mutations & Subscriptions
+-------------------------------------------
+GraphQL --> single endpoint + Post method
+
+Postman --> HTTP Collection or GraphQL Client
+
+Query --> Get
+
+Mutation --> Post, Put, Patch, Delete
+
+Subcription --> Live Updates
+
+
+eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik9FWTJSVGM1UlVOR05qSXhSRUV5TURJNFFUWXdNekZETWtReU1EQXdSVUV4UVVRM05EazFNQSJ9.eyJodHRwczovL2hhc3VyYS5pby9qd3QvY2xhaW1zIjp7IngtaGFzdXJhLWRlZmF1bHQtcm9sZSI6InVzZXIiLCJ4LWhhc3VyYS1hbGxvd2VkLXJvbGVzIjpbInVzZXIiXSwieC1oYXN1cmEtdXNlci1pZCI6ImF1dGgwfDY4MzZiY2VkOThhYjIxNjA3YWUzY2ZjMyJ9LCJuaWNrbmFtZSI6Im1tcjA5MTI5NiIsIm5hbWUiOiJtbXIwOTEyOTZAZ21haWwuY29tIiwicGljdHVyZSI6Imh0dHBzOi8vcy5ncmF2YXRhci5jb20vYXZhdGFyL2RmMmI2MTJkZTA0NzgzZTUwYTIwOGNhMzRmMmRjMTVhP3M9NDgwJnI9cGcmZD1odHRwcyUzQSUyRiUyRmNkbi5hdXRoMC5jb20lMkZhdmF0YXJzJTJGbW0ucG5nIiwidXBkYXRlZF9hdCI6IjIwMjUtMDUtMjlUMDI6MTU6NDQuMzUwWiIsImlzcyI6Imh0dHBzOi8vZ3JhcGhxbC10dXRvcmlhbHMuYXV0aDAuY29tLyIsImF1ZCI6IlAzOHFuRm8xbEZBUUpyemt1bi0td0V6cWxqVk5HY1dXIiwic3ViIjoiYXV0aDB8NjgzNmJjZWQ5OGFiMjE2MDdhZTNjZmMzIiwiaWF0IjoxNzQ4NTY4ODA4LCJleHAiOjE3NDg2MDQ4MDgsInNpZCI6IkVlNVRyS21OdmQ1UkUzV2dYYnFOMTNQT3dkVC1xVjdqIiwiYXRfaGFzaCI6IkVZbDJjSHNQdlFNVFZ6TWNpMjFHU2ciLCJub25jZSI6IkN3Lk9jTzJ3NUFBRHNMQlJyeUhwLU95MUczWDNsVTM0In0.pChHhncArpTiWHD7DM5tCGPCuvrKtAWTVt0ZVDdIW9c6sLf_6uqKiMFCvJ10qQg_9sY0tIzE2xBbE7edmHbA7uNDbCaqQ-lP1YIaUf-ETDKQrmxl-VIMvQGRITWtY26Y4Oel9dtaMQB6ks0BkKrEzqzmhIhvrH7QttpdMMptUVLZETd7aJkjMSOg03TDQGFizpoKiwyYIsKQkd47cLa3_hHMU8g2KMR5-LigJdtRyI1HKyTFt3fOJ7-By01zPM-OLHxjlQgoyhAs-FdJ7ZPBSJopDpKaQ36exvJnTydc2VUuVdEHS_aHX85X-KIkEaPmxOXqZ1xDDL-BqsjJjoDaiQ
+
+
+eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik9FWTJSVGM1UlVOR05qSXhSRUV5TURJNFFUWXdNekZETWtReU1EQXdSVUV4UVVRM05EazFNQSJ9
+
+
+Pre-Request in Rest --> Befor Query in GraphQL
+Post-Resposne in Rest --> After Response in GraphQL
+
+
+{
+  "data": {
+    "insert_todos": {
+      "affected_rows": 1,
+      "returning": [
+        {
+          "id": 456653,
+          "created_at": "2025-05-30T02:01:38.747047+00:00",
+          "title": "sdet"
+        }
+      ]
+    }
+  }
+}
+
+{
+    "data": {
+        "insert_todos": {
+            "affected_rows": 1,
+            "returning": [
+                {
+                    "id": 456654,
+                    "created_at": "2025-05-30T02:05:58.622274+00:00",
+                    "title": "sdet"
+                }
+            ]
+        }
+    }
+}
+
+
+
+456655
+
+Queries and Mutations --> normal HTTP Api calls
+
+subscriptions --> Live streaming
+
+But subscriptions use WebSockets, which keep a live connection between the client and server. This helps get real-time updates, like messages or notifications, without sending a request each time.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

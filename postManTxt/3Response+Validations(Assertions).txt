@@ -1,0 +1,50 @@
+Response Validations(Assertions)
+--------------------------------
+Create Dummy API's
+JSON
+JSON Path
+	dot notation
+	brackets
+
+Assertions --> Validation Points
+
+Request --> API --> Response
+
+Java --> TestNg --> TestNG Assertions
+Python --> PyTest --> Assesrtions
+
+Postman --> Chailibrary  --> JS/TS
+
+Response information
+----------------------
+status code
+	Indicates the result of the API request. It helps identify the outcome of the request.
+
+Headers
+	Provide additional metadata in the form key-value pairs about the response, such as the type of data 	returned (e.g., JSON), server details, caching rules, or security policies.
+
+
+Cookies
+	Small pieces of data sent by the server to the client, often used to maintain sessions, track user 	activity, or store user preferences. Cookies are not found when running the API locally; they are only 	visible when accessed through the internet.
+
+Response Time
+Response body
+JSON Schema --> data about data --> metadata
+
+Get   -> details
+Post
+Put
+Patch
+Delete
+
+
+Postman --> validations --> scripts tab --> Post Response
+
+Status of validations --> Test Results
+
+
+
+
+
+
+
