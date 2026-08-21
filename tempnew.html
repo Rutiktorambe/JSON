@@ -1,0 +1,1606 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Overall Timesheet Summary</title>
+
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+
+        body {
+
+            margin: 0;
+
+            padding: 25px;
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            background: #f5f7fa;
+
+            color: #222;
+
+        }
+
+
+        /* =====================================================
+           PAGE HEADER
+           ===================================================== */
+
+        .page-header {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            margin-bottom: 20px;
+
+        }
+
+
+        .page-header h1 {
+
+            margin: 0;
+
+            font-size: 25px;
+
+        }
+
+
+        .page-header p {
+
+            margin: 5px 0 0;
+
+            color: #666;
+
+        }
+
+
+        /* =====================================================
+           FILTER PANEL
+           ===================================================== */
+
+        .filter-panel {
+
+            background: white;
+
+            padding: 20px;
+
+            border-radius: 10px;
+
+            box-shadow:
+                0 2px 8px
+                rgba(0, 0, 0, 0.08);
+
+            margin-bottom: 20px;
+
+        }
+
+
+        .filter-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(
+                    auto-fit,
+                    minmax(180px, 1fr)
+                );
+
+            gap: 15px;
+
+        }
+
+
+        .filter-group {
+
+            display: flex;
+
+            flex-direction: column;
+
+        }
+
+
+        .filter-group label {
+
+            font-size: 13px;
+
+            font-weight: 600;
+
+            margin-bottom: 6px;
+
+        }
+
+
+        .filter-group select,
+        .filter-group input {
+
+            width: 100%;
+
+            padding: 10px;
+
+            border: 1px solid #ccc;
+
+            border-radius: 6px;
+
+            font-size: 14px;
+
+        }
+
+
+        .generate-btn {
+
+            margin-top: 20px;
+
+            padding: 10px 20px;
+
+            border: none;
+
+            border-radius: 6px;
+
+            cursor: pointer;
+
+            font-weight: bold;
+
+        }
+
+
+        /* =====================================================
+           SUMMARY CARDS
+           ===================================================== */
+
+        .summary-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(
+                    3,
+                    minmax(180px, 1fr)
+                );
+
+            gap: 15px;
+
+            margin-bottom: 20px;
+
+        }
+
+
+        .summary-card {
+
+            background: white;
+
+            border-radius: 10px;
+
+            padding: 20px;
+
+            box-shadow:
+                0 2px 8px
+                rgba(0, 0, 0, 0.08);
+
+        }
+
+
+        .summary-card h3 {
+
+            margin: 0;
+
+            font-size: 14px;
+
+            color: #666;
+
+        }
+
+
+        .summary-card .number {
+
+            font-size: 30px;
+
+            font-weight: bold;
+
+            margin-top: 10px;
+
+        }
+
+
+        /* =====================================================
+           TEAM SUMMARY
+           ===================================================== */
+
+        .section {
+
+            background: white;
+
+            padding: 20px;
+
+            border-radius: 10px;
+
+            box-shadow:
+                0 2px 8px
+                rgba(0, 0, 0, 0.08);
+
+            margin-bottom: 20px;
+
+        }
+
+
+        .section h2 {
+
+            margin-top: 0;
+
+            font-size: 19px;
+
+        }
+
+
+        /* =====================================================
+           TABLE
+           ===================================================== */
+
+        .table-container {
+
+            width: 100%;
+
+            overflow-x: auto;
+
+        }
+
+
+        table {
+
+            width: 100%;
+
+            border-collapse: collapse;
+
+        }
+
+
+        th {
+
+            background: #eef1f5;
+
+            font-weight: 600;
+
+            white-space: nowrap;
+
+        }
+
+
+        th,
+        td {
+
+            border: 1px solid #ddd;
+
+            padding: 10px;
+
+            text-align: center;
+
+        }
+
+
+        td.employee-name {
+
+            text-align: left;
+
+            font-weight: 500;
+
+        }
+
+
+        td.team-name {
+
+            text-align: left;
+
+        }
+
+
+        tbody tr:hover {
+
+            background: #f8f9fa;
+
+        }
+
+
+        /* =====================================================
+           WEEK STATUS
+           ===================================================== */
+
+        .week-cell {
+
+            min-width: 105px;
+
+            font-weight: bold;
+
+        }
+
+
+        .week-cell.submitted {
+
+            background: #d4edda;
+
+            color: #155724;
+
+        }
+
+
+        .week-cell.missing {
+
+            background: #f8d7da;
+
+            color: #721c24;
+
+        }
+
+
+        .week-cell.not-eligible {
+
+            background: #fff3cd;
+
+            color: #856404;
+
+        }
+
+
+        .week-icon {
+
+            font-size: 18px;
+
+        }
+
+
+        .week-count {
+
+            display: block;
+
+            font-size: 11px;
+
+            margin-top: 3px;
+
+            font-weight: normal;
+
+        }
+
+
+        /* =====================================================
+           TEAM TABLE
+           ===================================================== */
+
+        .team-submitted {
+
+            color: #155724;
+
+            font-weight: bold;
+
+        }
+
+
+        .team-missing {
+
+            color: #721c24;
+
+            font-weight: bold;
+
+        }
+
+
+        /* =====================================================
+           LEGEND
+           ===================================================== */
+
+        .legend {
+
+            display: flex;
+
+            gap: 20px;
+
+            flex-wrap: wrap;
+
+            margin-top: 15px;
+
+        }
+
+
+        .legend-item {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 6px;
+
+            font-size: 13px;
+
+        }
+
+
+        .legend-box {
+
+            width: 18px;
+
+            height: 18px;
+
+            border-radius: 3px;
+
+        }
+
+
+        .legend-green {
+
+            background: #d4edda;
+
+        }
+
+
+        .legend-red {
+
+            background: #f8d7da;
+
+        }
+
+
+        .legend-yellow {
+
+            background: #fff3cd;
+
+        }
+
+
+        /* =====================================================
+           NO DATA
+           ===================================================== */
+
+        .no-data {
+
+            display: none;
+
+            text-align: center;
+
+            padding: 30px;
+
+            color: #777;
+
+        }
+
+
+        /* =====================================================
+           RESPONSIVE
+           ===================================================== */
+
+        @media (max-width: 768px) {
+
+            body {
+
+                padding: 10px;
+
+            }
+
+
+            .summary-grid {
+
+                grid-template-columns: 1fr;
+
+            }
+
+
+            .page-header {
+
+                display: block;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- ======================================================
+         HEADER
+         ======================================================= -->
+
+    <div class="page-header">
+
+        <div>
+
+            <h1>
+                Overall Timesheet Summary
+            </h1>
+
+            <p>
+                {{ selected_month }}/{{ selected_year }}
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- ======================================================
+         FILTERS
+         ======================================================= -->
+
+    <div class="filter-panel">
+
+        <form method="GET"
+              action="{{ url_for('admin.overalltimesheetsummary') }}">
+
+            <div class="filter-grid">
+
+
+                <!-- MONTH -->
+
+                <div class="filter-group">
+
+                    <label>
+                        Month
+                    </label>
+
+                    <select name="month"
+                            id="monthSelect">
+
+                        <option value="1"
+                            {% if selected_month == 1 %}
+                                selected
+                            {% endif %}>
+                            January
+                        </option>
+
+                        <option value="2"
+                            {% if selected_month == 2 %}
+                                selected
+                            {% endif %}>
+                            February
+                        </option>
+
+                        <option value="3"
+                            {% if selected_month == 3 %}
+                                selected
+                            {% endif %}>
+                            March
+                        </option>
+
+                        <option value="4"
+                            {% if selected_month == 4 %}
+                                selected
+                            {% endif %}>
+                            April
+                        </option>
+
+                        <option value="5"
+                            {% if selected_month == 5 %}
+                                selected
+                            {% endif %}>
+                            May
+                        </option>
+
+                        <option value="6"
+                            {% if selected_month == 6 %}
+                                selected
+                            {% endif %}>
+                            June
+                        </option>
+
+                        <option value="7"
+                            {% if selected_month == 7 %}
+                                selected
+                            {% endif %}>
+                            July
+                        </option>
+
+                        <option value="8"
+                            {% if selected_month == 8 %}
+                                selected
+                            {% endif %}>
+                            August
+                        </option>
+
+                        <option value="9"
+                            {% if selected_month == 9 %}
+                                selected
+                            {% endif %}>
+                            September
+                        </option>
+
+                        <option value="10"
+                            {% if selected_month == 10 %}
+                                selected
+                            {% endif %}>
+                            October
+                        </option>
+
+                        <option value="11"
+                            {% if selected_month == 11 %}
+                                selected
+                            {% endif %}>
+                            November
+                        </option>
+
+                        <option value="12"
+                            {% if selected_month == 12 %}
+                                selected
+                            {% endif %}>
+                            December
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- YEAR -->
+
+                <div class="filter-group">
+
+                    <label>
+                        Year
+                    </label>
+
+                    <select name="year">
+
+                        {% for year in range(current_year - 5, current_year + 1) %}
+
+                            <option value="{{ year }}"
+                                {% if year == selected_year %}
+                                    selected
+                                {% endif %}>
+
+                                {{ year }}
+
+                            </option>
+
+                        {% endfor %}
+
+                    </select>
+
+                </div>
+
+
+                <!-- TEAM -->
+
+                <div class="filter-group">
+
+                    <label>
+                        Team
+                    </label>
+
+                    <select id="teamFilter">
+
+                        <option value="All">
+                            All Teams
+                        </option>
+
+                        {% for team in teams %}
+
+                            <option value="{{ team }}">
+                                {{ team }}
+                            </option>
+
+                        {% endfor %}
+
+                    </select>
+
+                </div>
+
+
+                <!-- STATUS -->
+
+                <div class="filter-group">
+
+                    <label>
+                        Submission Status
+                    </label>
+
+                    <select id="statusFilter">
+
+                        <option value="All">
+                            All Employees
+                        </option>
+
+                        <option value="Submitted">
+                            Submitted
+                        </option>
+
+                        <option value="NonSubmitted">
+                            Non-Submitted
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- SEARCH -->
+
+                <div class="filter-group">
+
+                    <label>
+                        Search Employee
+                    </label>
+
+                    <input
+                        type="text"
+                        id="searchInput"
+                        placeholder="Employee ID or name..."
+                    >
+
+                </div>
+
+            </div>
+
+
+            <!-- SERVER SIDE BUTTON -->
+
+            <button
+                type="submit"
+                class="generate-btn">
+
+                Generate Report
+
+            </button>
+
+        </form>
+
+    </div>
+
+
+    <!-- ======================================================
+         SUMMARY CARDS
+         ======================================================= -->
+
+    <div class="summary-grid">
+
+
+        <div class="summary-card">
+
+            <h3>
+                Active Employees
+            </h3>
+
+            <div
+                class="number"
+                id="totalActive">
+
+                {{ total_active }}
+
+            </div>
+
+        </div>
+
+
+        <div class="summary-card">
+
+            <h3>
+                Submitted
+            </h3>
+
+            <div
+                class="number"
+                id="totalSubmitted">
+
+                {{ total_submitted }}
+
+            </div>
+
+        </div>
+
+
+        <div class="summary-card">
+
+            <h3>
+                Non-Submitted
+            </h3>
+
+            <div
+                class="number"
+                id="totalNonSubmitted">
+
+                {{ total_non_submitted }}
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+    <!-- ======================================================
+         TEAM SUMMARY
+         ======================================================= -->
+
+    <div class="section">
+
+        <h2>
+            Team-wise Summary
+        </h2>
+
+
+        <div class="table-container">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>
+                            Team
+                        </th>
+
+                        <th>
+                            Active
+                        </th>
+
+                        <th>
+                            Submitted
+                        </th>
+
+                        <th>
+                            Non-Submitted
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody id="teamSummaryBody">
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+
+    <!-- ======================================================
+         EMPLOYEE TABLE
+         ======================================================= -->
+
+    <div class="section">
+
+        <h2>
+            Employee Details
+        </h2>
+
+
+        <div class="table-container">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>
+                            Employee ID
+                        </th>
+
+                        <th>
+                            Employee Name
+                        </th>
+
+                        <th>
+                            Team
+                        </th>
+
+
+                        {% for week in week_ranges %}
+
+                            <th>
+
+                                Week {{ week.number }}
+
+                                <br>
+
+                                <small>
+                                    {{ week.label }}
+                                </small>
+
+                            </th>
+
+                        {% endfor %}
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody id="employeeTableBody">
+
+
+                    {% for employee in employees %}
+
+                    <tr
+
+                        data-emp-id="{{ employee.emp_id }}"
+
+                        data-name="{{ employee.name }}"
+
+                        data-team="{{ employee.team }}"
+
+                        data-submitted="{{ 'Submitted' if employee.submitted else 'NonSubmitted' }}"
+                    >
+
+
+                        <!-- EMPLOYEE ID -->
+
+                        <td>
+
+                            {{ employee.emp_id }}
+
+                        </td>
+
+
+                        <!-- NAME -->
+
+                        <td class="employee-name">
+
+                            {{ employee.name }}
+
+                        </td>
+
+
+                        <!-- TEAM -->
+
+                        <td class="team-name">
+
+                            {{ employee.team }}
+
+                        </td>
+
+
+                        <!-- WEEKS -->
+
+                        {% for week in employee.weeks %}
+
+
+                            {% if week.status == "submitted" %}
+
+                                <td class="week-cell submitted">
+
+                                    <span class="week-icon">
+                                        ✓
+                                    </span>
+
+                                    <span class="week-count">
+
+                                        {{ week.submitted_days }}
+                                        /
+                                        {{ week.eligible_days }}
+
+                                    </span>
+
+                                </td>
+
+
+                            {% elif week.status == "missing" %}
+
+                                <td class="week-cell missing">
+
+                                    <span class="week-icon">
+                                        ✗
+                                    </span>
+
+                                    <span class="week-count">
+
+                                        {{ week.submitted_days }}
+                                        /
+                                        {{ week.eligible_days }}
+
+                                    </span>
+
+                                </td>
+
+
+                            {% else %}
+
+                                <td class="week-cell not-eligible">
+
+                                    <span class="week-icon">
+                                        —
+                                    </span>
+
+                                    <span class="week-count">
+                                        Not Eligible
+                                    </span>
+
+                                </td>
+
+                            {% endif %}
+
+
+                        {% endfor %}
+
+
+                    </tr>
+
+                    {% endfor %}
+
+
+                </tbody>
+
+            </table>
+
+
+            <div
+                id="noData"
+                class="no-data">
+
+                No employees found for the selected filters.
+
+            </div>
+
+
+        </div>
+
+
+        <!-- LEGEND -->
+
+        <div class="legend">
+
+
+            <div class="legend-item">
+
+                <span
+                    class="legend-box legend-green">
+                </span>
+
+                Submitted
+
+            </div>
+
+
+            <div class="legend-item">
+
+                <span
+                    class="legend-box legend-red">
+                </span>
+
+                Non-Submitted
+
+            </div>
+
+
+            <div class="legend-item">
+
+                <span
+                    class="legend-box legend-yellow">
+                </span>
+
+                Not Eligible
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+    <!-- ======================================================
+         JAVASCRIPT
+         ======================================================= -->
+
+    <script>
+
+
+        /*
+         * =====================================================
+         * GET ELEMENTS
+         * =====================================================
+         */
+
+        const teamFilter =
+            document.getElementById(
+                "teamFilter"
+            );
+
+
+        const statusFilter =
+            document.getElementById(
+                "statusFilter"
+            );
+
+
+        const searchInput =
+            document.getElementById(
+                "searchInput"
+            );
+
+
+        const employeeTableBody =
+            document.getElementById(
+                "employeeTableBody"
+            );
+
+
+        const noData =
+            document.getElementById(
+                "noData"
+            );
+
+
+        const totalActive =
+            document.getElementById(
+                "totalActive"
+            );
+
+
+        const totalSubmitted =
+            document.getElementById(
+                "totalSubmitted"
+            );
+
+
+        const totalNonSubmitted =
+            document.getElementById(
+                "totalNonSubmitted"
+            );
+
+
+        const teamSummaryBody =
+            document.getElementById(
+                "teamSummaryBody"
+            );
+
+
+        /*
+         * =====================================================
+         * FILTER EMPLOYEES
+         * =====================================================
+         */
+
+        function filterEmployees() {
+
+
+            const selectedTeam =
+                teamFilter.value;
+
+
+            const selectedStatus =
+                statusFilter.value;
+
+
+            const searchText =
+                searchInput.value
+                    .trim()
+                    .toLowerCase();
+
+
+            const rows =
+                Array.from(
+                    employeeTableBody
+                        .querySelectorAll("tr")
+                );
+
+
+            let visibleEmployees = [];
+
+
+            /*
+             * =================================================
+             * LOOP THROUGH EMPLOYEES
+             * =================================================
+             */
+
+            rows.forEach(function(row) {
+
+
+                const team =
+                    row.dataset.team;
+
+
+                const employeeId =
+                    row.dataset.empId
+                        .toLowerCase();
+
+
+                const name =
+                    row.dataset.name
+                        .toLowerCase();
+
+
+                const status =
+                    row.dataset.submitted;
+
+
+                /*
+                 * TEAM FILTER
+                 */
+
+                const teamMatch =
+                    selectedTeam === "All"
+                    ||
+                    team === selectedTeam;
+
+
+                /*
+                 * STATUS FILTER
+                 */
+
+                const statusMatch =
+                    selectedStatus === "All"
+                    ||
+                    status === selectedStatus;
+
+
+                /*
+                 * SEARCH FILTER
+                 */
+
+                const searchMatch =
+
+                    searchText === ""
+
+                    ||
+
+                    employeeId.includes(
+                        searchText
+                    )
+
+                    ||
+
+                    name.includes(
+                        searchText
+                    );
+
+
+                /*
+                 * FINAL RESULT
+                 */
+
+                const visible =
+
+                    teamMatch
+                    &&
+                    statusMatch
+                    &&
+                    searchMatch;
+
+
+                if (visible) {
+
+                    row.style.display = "";
+
+                    visibleEmployees.push(row);
+
+                }
+                else {
+
+                    row.style.display = "none";
+
+                }
+
+            });
+
+
+            /*
+             * =================================================
+             * NO DATA
+             * =================================================
+             */
+
+            if (
+                visibleEmployees.length === 0
+            ) {
+
+                noData.style.display =
+                    "block";
+
+            }
+            else {
+
+                noData.style.display =
+                    "none";
+
+            }
+
+
+            /*
+             * UPDATE SUMMARY
+             */
+
+            updateSummary(
+                visibleEmployees
+            );
+
+        }
+
+
+        /*
+         * =====================================================
+         * UPDATE SUMMARY
+         * =====================================================
+         */
+
+        function updateSummary(rows) {
+
+
+            /*
+             * ACTIVE
+             */
+
+            const activeCount =
+                rows.length;
+
+
+            /*
+             * SUBMITTED
+             */
+
+            let submittedCount = 0;
+
+
+            rows.forEach(function(row) {
+
+                if (
+                    row.dataset.submitted
+                    === "Submitted"
+                ) {
+
+                    submittedCount++;
+
+                }
+
+            });
+
+
+            /*
+             * NON-SUBMITTED
+             */
+
+            const nonSubmittedCount =
+                activeCount
+                -
+                submittedCount;
+
+
+            /*
+             * UPDATE CARDS
+             */
+
+            totalActive.textContent =
+                activeCount;
+
+
+            totalSubmitted.textContent =
+                submittedCount;
+
+
+            totalNonSubmitted.textContent =
+                nonSubmittedCount;
+
+
+            /*
+             * UPDATE TEAM SUMMARY
+             */
+
+            updateTeamSummary(
+                rows
+            );
+
+        }
+
+
+        /*
+         * =====================================================
+         * TEAM SUMMARY
+         * =====================================================
+         */
+
+        function updateTeamSummary(rows) {
+
+
+            const teams = {};
+
+
+            /*
+             * BUILD TEAM DATA
+             */
+
+            rows.forEach(function(row) {
+
+
+                const team =
+                    row.dataset.team;
+
+
+                if (!teams[team]) {
+
+                    teams[team] = {
+
+                        active: 0,
+
+                        submitted: 0,
+
+                        nonSubmitted: 0
+
+                    };
+
+                }
+
+
+                teams[team].active++;
+
+
+                if (
+                    row.dataset.submitted
+                    === "Submitted"
+                ) {
+
+                    teams[team].submitted++;
+
+                }
+                else {
+
+                    teams[team].nonSubmitted++;
+
+                }
+
+            });
+
+
+            /*
+             * CLEAR OLD TABLE
+             */
+
+            teamSummaryBody.innerHTML = "";
+
+
+            /*
+             * SORT TEAM NAMES
+             */
+
+            const sortedTeams =
+                Object.keys(teams).sort(
+                    function(a, b) {
+
+                        return a.localeCompare(
+                            b
+                        );
+
+                    }
+                );
+
+
+            /*
+             * CREATE ROWS
+             */
+
+            sortedTeams.forEach(
+                function(team) {
+
+
+                    const data =
+                        teams[team];
+
+
+                    const row =
+                        document.createElement(
+                            "tr"
+                        );
+
+
+                    row.innerHTML = `
+
+                        <td>
+                            ${escapeHtml(team)}
+                        </td>
+
+                        <td>
+                            ${data.active}
+                        </td>
+
+                        <td class="team-submitted">
+                            ${data.submitted}
+                        </td>
+
+                        <td class="team-missing">
+                            ${data.nonSubmitted}
+                        </td>
+
+                    `;
+
+
+                    teamSummaryBody.appendChild(
+                        row
+                    );
+
+                }
+            );
+
+        }
+
+
+        /*
+         * =====================================================
+         * HTML ESCAPE
+         * =====================================================
+         */
+
+        function escapeHtml(value) {
+
+
+            const div =
+                document.createElement(
+                    "div"
+                );
+
+
+            div.textContent =
+                value;
+
+
+            return div.innerHTML;
+
+        }
+
+
+        /*
+         * =====================================================
+         * FILTER EVENT LISTENERS
+         * =====================================================
+         */
+
+        teamFilter.addEventListener(
+            "change",
+            filterEmployees
+        );
+
+
+        statusFilter.addEventListener(
+            "change",
+            filterEmployees
+        );
+
+
+        searchInput.addEventListener(
+            "input",
+            filterEmployees
+        );
+
+
+        /*
+         * =====================================================
+         * INITIAL LOAD
+         * =====================================================
+         */
+
+        document.addEventListener(
+            "DOMContentLoaded",
+            function() {
+
+                filterEmployees();
+
+            }
+        );
+
+
+    </script>
+
+
+</body>
+
+</html>
