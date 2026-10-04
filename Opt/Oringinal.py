@@ -1,6 +1,3 @@
-# JSON
-
-```pyhton
 import json
 import xlwings as xw
 import pandas as pd
@@ -593,5 +590,3 @@ premium_dict = {
 premium_df = pd.DataFrame(premium_dict)
 premium_df.to_csv('UW_V10_Results_500.csv', index=False)
 
-
-```
